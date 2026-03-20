@@ -1,0 +1,1980 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Richard Rasmussen · Parcerias Estratégicas</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+:root {
+  --bg:#000; --primary:#F1770B; --accent:#F3A50A;
+  --card-bg:rgba(55,52,53,0.85); --card-border:rgba(255,255,255,0.07);
+  --text:#F0EDE8; --muted:rgba(240,237,232,0.5);
+  --mono:'Noto Sans TC',sans-serif; --sans:'Noto Sans TC',sans-serif;
+  --glow-red:0 0 30px rgba(241,119,11,0.4); --glow-gold:0 0 20px rgba(243,165,10,0.3);
+  --pad:clamp(20px,5vw,80px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:hidden;max-width:100%}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden;overflow-y:visible;padding-bottom:72px}
+@media(min-width:768px){body{padding-bottom:0;padding-top:64px}}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.3}
+::-webkit-scrollbar{width:0;display:none}
+.section-label{font-family:var(--sans);font-size:.62rem;font-weight:300;letter-spacing:.28em;color:var(--accent);text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:.6rem}
+.section-label::after{content:'';flex:1;height:1px;max-width:60px;background:linear-gradient(90deg,var(--accent),transparent)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}.reveal-delay-3{transition-delay:.3s}.reveal-delay-4{transition-delay:.4s}
+
+/* HERO */
+#hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;position:relative;overflow:hidden;padding-bottom:clamp(88px,12vw,120px)}
+/* Full-screen background image / placeholder */
+.hero-bg-image{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.hero-bg-image img.hero-img{
+  position:absolute;inset:-5%;width:110%;height:110%;
+  object-fit:cover;object-position:center top;
+  opacity:0;
+  transform:scale(1.08);
+  animation:kenBurns 12s ease-out forwards,heroFade 1.2s ease forwards;
+  will-change:transform,opacity;
+  transition:transform 1.2s cubic-bezier(.4,0,.2,1);
+}
+#hero:hover .hero-img{transform:scale(1.04)}
+@keyframes kenBurns{from{transform:scale(1.08)}to{transform:scale(1)}}
+@keyframes heroFade{from{opacity:0}to{opacity:1}}
+/* This becomes background:url('assets/richard-hero.jpg') center/cover no-repeat once image is added */
+.hero-bg-image::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,.15) 60%,rgba(0,0,0,.75) 100%)}
+/* placeholder label */
+.hero-bg-image .ph-label{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--sans);font-weight:300;font-size:.6rem;letter-spacing:.22em;color:rgba(255,255,255,.1);text-transform:uppercase;text-align:center;white-space:nowrap;z-index:1;pointer-events:none}
+.hero-text-block{position:relative;z-index:2;padding:0 var(--pad);text-align:center;display:flex;flex-direction:column;align-items:center;opacity:0;transform:translateY(24px);animation:fadeUp .85s ease forwards .25s;width:100%;max-width:800px}
+@media(min-width:768px){#hero{align-items:flex-start;justify-content:center;padding-left:var(--pad);padding-right:var(--pad)}.hero-text-block{text-align:left;align-items:flex-start;max-width:560px}}.hero-stats{display:flex;gap:clamp(16px,4vw,40px);margin-bottom:2rem;flex-wrap:wrap;justify-content:center}
+/* hide old mobile/desktop image elements */
+.hero-image-mobile{display:none}
+.hero-desktop-right{display:none}
+.richard-logo{margin-bottom:1.5rem;display:flex;flex-direction:column;align-items:center}
+.logo-img{width:clamp(140px,22vw,220px);object-fit:contain}
+.hero-headline{font-size:clamp(1.6rem,4.5vw,2.6rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;max-width:600px;margin-bottom:.9rem;color:var(--text)}
+.hero-headline em{font-style:normal;background:linear-gradient(135deg,#F1770B,#F3A50A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-tagline{font-size:clamp(.82rem,2vw,.98rem);font-weight:400;color:rgba(240,237,232,.65);line-height:1.8;max-width:480px;margin-bottom:1.75rem}
+.hero-stats{display:flex;gap:clamp(16px,4vw,40px);margin-bottom:2rem;flex-wrap:wrap;justify-content:center}
+.hero-stat .num{font-size:clamp(1.3rem,3.5vw,1.9rem);font-weight:800;background:linear-gradient(135deg,#F1770B,#F3A50A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.hero-stat .lbl{font-family:var(--sans);font-weight:300;font-size:.55rem;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;margin-top:3px}
+.btn-cta{display:inline-flex;align-items:center;gap:.7rem;padding:.9rem 1.75rem;background:rgba(241,119,11,.18);border:1px solid rgba(241,119,11,.55);border-radius:12px;color:var(--text);font-family:var(--sans);font-size:.88rem;font-weight:700;letter-spacing:.05em;text-decoration:none;cursor:pointer;transition:all .3s;backdrop-filter:blur(14px);position:relative;overflow:hidden}
+.btn-cta::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(241,119,11,.3),rgba(243,165,10,.1));opacity:0;transition:opacity .3s}
+.btn-cta:hover::before{opacity:1}.btn-cta:hover{border-color:var(--accent);box-shadow:var(--glow-red);transform:translateY(-2px) scale(1.04);background:rgba(243,165,10,.22);color:var(--accent)}
+.btn-cta svg,.btn-cta span{position:relative;z-index:1}
+.hero-photo-ph{width:100%;height:100%;min-height:260px;background:transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem}
+.hero-photo-ph .ph-icon{font-size:3rem;opacity:.1}
+.hero-photo-ph p{font-family:var(--sans);font-weight:300;font-size:.58rem;letter-spacing:.2em;color:rgba(255,255,255,.12);text-transform:uppercase;text-align:center;padding:0 2rem}
+
+/* SOCIAL — tabbed layout */
+#social{padding:clamp(60px,8vw,100px) var(--pad);background:transparent}
+.social-header{margin-bottom:2rem}
+#social h2{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;letter-spacing:-.02em}
+#social h2 em{font-style:normal;color:var(--accent)}
+.social-total{display:flex;align-items:baseline;gap:.75rem;margin-top:.5rem}
+.total-num{font-size:clamp(2.2rem,5vw,3.2rem);font-weight:800;background:linear-gradient(135deg,#F1770B,#F3A50A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.total-lbl{font-family:var(--sans);font-weight:300;font-size:.62rem;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+
+/* Platform tab bar */
+.plat-tabs{display:flex;gap:0;margin-bottom:0;border-bottom:1px solid var(--card-border)}
+.plat-tab{display:flex;align-items:center;gap:8px;padding:.85rem 1.25rem;cursor:pointer;border:none;background:transparent;color:rgba(240,237,232,.35);font-family:var(--sans);font-size:.78rem;font-weight:500;letter-spacing:.04em;transition:all .2s;position:relative;flex-shrink:0}
+.plat-tab::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--plat-color,var(--primary)),var(--accent));opacity:0;transition:opacity .2s}
+.plat-tab:hover{color:var(--text)}
+.plat-tab.active{color:var(--text)}
+.plat-tab.active::after{opacity:1}
+.plat-tab svg{width:16px;height:16px;flex-shrink:0}
+.plat-tab-yt{--plat-color:#FF3333}
+.plat-tab-ig{--plat-color:#E1306C}
+.plat-tab-tt{--plat-color:#69C9D0}
+.plat-tab-fb{--plat-color:#4A90D9}
+
+/* Platform panel */
+.plat-panel{display:none;padding-top:1.75rem}
+.plat-panel.active{display:block}
+
+/* Platform header */
+.plat-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.plat-identity{display:flex;align-items:center;gap:.75rem}
+.plat-icon-wrap{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.plat-handle{font-size:.78rem;font-weight:300;color:var(--muted)}
+.plat-followers{font-size:1.5rem;font-weight:800;line-height:1;background:linear-gradient(135deg,#F1770B,#F3A50A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* Period toggle */
+.period-toggle{display:flex;background:rgba(255,255,255,.04);border:1px solid var(--card-border);border-radius:8px;overflow:hidden}
+.period-btn{padding:.4rem .85rem;font-family:var(--sans);font-size:.65rem;font-weight:500;letter-spacing:.06em;color:var(--muted);cursor:pointer;border:none;background:transparent;transition:all .2s}
+.period-btn.active{background:rgba(241,119,11,.2);color:var(--text)}
+
+/* Metric cards */
+.met-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:2rem}
+@media(min-width:480px){.met-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.met-grid{grid-template-columns:repeat(3,1fr)}}
+.met-card{padding:1rem;border-radius:12px;background:rgba(55,52,53,.5);border:1px solid var(--card-border)}
+.met-card-top{display:flex;align-items:center;gap:6px;margin-bottom:.6rem}
+.met-card-top svg{width:14px;height:14px;color:var(--primary);flex-shrink:0}
+.met-card-lbl{font-family:var(--sans);font-weight:300;font-size:.6rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.met-card-val{font-size:1.15rem;font-weight:800;color:var(--text);line-height:1}
+.met-card-sub{font-family:var(--sans);font-weight:300;font-size:.58rem;color:var(--muted);margin-top:3px}
+
+/* Trending content */
+.trending-head{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
+.trending-head svg{width:16px;height:16px;color:var(--primary)}
+.trending-title{font-size:.82rem;font-weight:700}
+.content-grid{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:600px){.content-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.content-grid{grid-template-columns:repeat(3,1fr)}}
+.content-card{border-radius:14px;background:rgba(255,255,255,.025);border:1px solid var(--card-border);overflow:hidden;transition:border-color .25s,transform .25s}
+.content-card:hover{border-color:rgba(241,119,11,.4);transform:translateY(-3px)}
+.content-thumb{aspect-ratio:16/9;background:rgba(255,255,255,.07);overflow:hidden;position:relative}
+.content-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.content-thumb-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+.content-thumb-ph svg{width:28px;height:28px;opacity:.3}
+.content-body{padding:.85rem}
+.content-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem}
+.content-handle{font-family:var(--sans);font-weight:300;font-size:.6rem;color:var(--muted)}
+.content-type{font-family:var(--sans);font-weight:300;font-size:.58rem;color:var(--muted);padding:.2rem .5rem;border:1px solid var(--card-border);border-radius:4px}
+.content-date{font-family:var(--sans);font-weight:300;font-size:.6rem;color:var(--muted);margin-bottom:.6rem}
+.content-mets{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.cmet{display:flex;align-items:center;gap:4px;padding:4px 6px;background:rgba(255,255,255,.03);border-radius:5px;border:1px solid var(--card-border)}
+.cmet svg{width:11px;height:11px;color:var(--primary);flex-shrink:0}
+.cmet-val{font-size:.68rem;font-weight:600;color:var(--text)}
+.cmet-lbl{font-family:var(--sans);font-weight:300;font-size:.55rem;color:var(--muted)}
+
+/* LOGOS */
+.logos-strip{padding:48px 0;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);overflow:hidden;position:relative;background:rgba(139,0,0,.5)}
+.logos-strip::before,.logos-strip::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.logos-strip::before{left:0;background:linear-gradient(90deg,rgba(139,0,0,.5),transparent)}
+.logos-strip::after{right:0;background:linear-gradient(-90deg,rgba(139,0,0,.5),transparent)}
+.logos-track{display:flex;gap:30px;width:max-content;animation:scrollLogos 36s linear infinite;align-items:center}
+.logo-word{font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.22);white-space:nowrap;transition:color .3s,transform .3s cubic-bezier(.34,1.56,.64,1);display:inline-block}
+.logo-word:hover{color:var(--accent);transform:scale(1.25)}
+.logo-sep{color:rgba(255,255,255,.1);font-size:.5rem}
+
+/* BIO */
+#bio{padding:clamp(60px,8vw,100px) var(--pad)}
+.bio-grid{display:grid;grid-template-columns:1fr;gap:40px}
+@media(min-width:768px){.bio-grid{grid-template-columns:1fr 1.4fr;gap:60px;align-items:center}}
+.bio-ph{width:100%;height:100%;background:linear-gradient(160deg,rgba(14,26,10,1),rgba(4,6,3,1));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
+.bio-ph .ph-icon{font-size:3.5rem;opacity:.1}
+.bio-ph p{font-family:var(--sans);font-weight:300;font-size:.58rem;letter-spacing:.2em;color:rgba(255,255,255,.12);text-transform:uppercase;text-align:center;padding:0 2rem}
+.bio-content{display:flex;flex-direction:column;justify-content:center}
+.bio-name{font-size:clamp(2rem,4.5vw,3rem);font-weight:800;letter-spacing:-.02em;line-height:1.05;margin-bottom:.5rem}
+.bio-badge{display:inline-block;width:fit-content;font-family:var(--sans);font-weight:300;font-size:.6rem;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;padding:.35rem .7rem;border:1px solid rgba(243,165,10,.25);border-radius:4px;margin-bottom:1.75rem}
+.bio-text{font-size:clamp(.85rem,1.8vw,.98rem);color:rgba(240,237,232,.7);line-height:1.8;margin-bottom:1.25rem}
+.bio-creds{display:flex;flex-direction:column;gap:6px;margin-top:.5rem}
+.cred{display:flex;align-items:center;gap:.6rem;font-family:var(--sans);font-weight:300;font-size:.62rem;letter-spacing:.08em;color:var(--muted)}
+.cred::before{content:'//';color:var(--primary);font-weight:700}
+
+/* PARALLAX — single full-page background */
+.section-parallax{position:relative}
+
+/* SECTION IMAGE BLOCK — full width, no card, contain */
+.section-image-block{
+  width:100%;
+  max-width:100%;
+  background:transparent;
+  border:none;
+  border-radius:0;
+  display:block;
+  overflow:visible;
+}
+.section-image-block img{
+  width:100%;height:auto;object-fit:contain;display:block;
+  transition:transform .5s cubic-bezier(.4,0,.2,1);
+  padding:0;
+}
+.section-image-block:hover img{transform:scale(1.03)}
+.section-image-ph{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.5rem;color:rgba(255,255,255,.15);font-family:var(--sans);font-weight:300;
+  font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;text-align:center;
+  padding:1.5rem;
+}
+.section-image-ph svg{width:32px;height:32px;opacity:.3}
+
+/* Bio photo — full image, no crop */
+.bio-photo-wrap{border-radius:0;overflow:visible;border:none;aspect-ratio:unset;min-height:unset;background:transparent;display:flex;align-items:center}
+@media(min-width:768px){.bio-photo-wrap{height:auto;min-height:unset;align-items:flex-end}}
+.bio-photo-wrap img{width:100%;height:auto;object-fit:contain;object-position:center bottom;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.bio-photo-wrap:hover img{transform:scale(1.02)}
+
+/* Podcast card image zoom */
+.podcast-card-lg .podcast-thumb img,
+.podcast-card .podcast-thumb-sm img{transition:transform .5s cubic-bezier(.4,0,.2,1),filter .4s}
+.glass-card:hover .podcast-card-lg .podcast-thumb img,
+.glass-card:hover .podcast-thumb-sm img{transform:scale(1.04);filter:brightness(.95)}
+
+/* AMAZON RESTRUCTURE */
+#amazon{padding:clamp(60px,8vw,100px) var(--pad);background:transparent}
+
+/* Row 1: amazon header */
+.amazon-header{display:flex;flex-direction:column;gap:1.5rem;margin-bottom:clamp(40px,5vw,60px)}
+.amazon-header-title{}
+.amazon-header-body{}
+.amazon-header .section-image-block{width:100%;max-width:100%;aspect-ratio:unset}
+@media(min-width:768px){
+  .amazon-header{flex-direction:row;align-items:stretch;gap:clamp(1rem,2vw,2rem)}
+  .amazon-header-text-wrap{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+  .amazon-header .section-image-block{
+    width:clamp(300px,42vw,560px);
+    flex-shrink:0;
+    order:2;
+    aspect-ratio:unset;
+    align-self:stretch;
+    min-height:360px;
+  }
+  .amazon-header .section-image-block img{
+    width:100%;height:100%;object-fit:cover;object-position:center center;
+  }
+  /* ROI 2x2 on desktop for better proportion */
+  .amazon-header .roi-grid{grid-template-columns:repeat(2,1fr)}
+}
+.amazon-eyebrow{font-family:var(--sans);font-weight:300;font-size:.62rem;letter-spacing:.28em;color:var(--accent);text-transform:uppercase;margin-bottom:.6rem}
+.amazon-big-title{font-size:clamp(2rem,5vw,3.8rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:1.25rem}
+
+/* Row 2: video + participants */
+.amazon-media{display:grid;grid-template-columns:1fr;gap:48px}
+@media(min-width:900px){.amazon-media{grid-template-columns:1.25fr 1fr;gap:60px;align-items:start}}
+
+/* PODCAST header */
+.podcast-header{display:flex;flex-direction:column;gap:1rem;margin-bottom:3rem}
+.podcast-header-title{}
+.podcast-header-body{}
+.podcast-header .section-image-block{width:100%;max-width:100%;aspect-ratio:unset}
+@media(min-width:768px){
+  .podcast-header{flex-direction:row;align-items:center;gap:clamp(2rem,4vw,5rem);justify-content:center}
+  .podcast-header-text-wrap{flex:0 1 520px;min-width:0;display:flex;flex-direction:column;justify-content:center}
+  .podcast-header .section-image-block{
+    width:clamp(280px,36vw,480px);
+    flex-shrink:0;
+    order:2;
+    aspect-ratio:unset;
+    align-self:stretch;
+    min-height:320px;
+  }
+  .podcast-header .section-image-block img{
+    width:100%;height:100%;object-fit:cover;object-position:center top;
+  }
+}
+.video-frame{border-radius:18px;overflow:hidden;aspect-ratio:16/9;background:rgba(8,18,6,1);border:1px solid rgba(241,119,11,.3);position:relative;display:flex;align-items:center;justify-content:center;box-shadow:var(--glow-red);margin-bottom:1.5rem}
+.play-btn{width:64px;height:64px;border-radius:50%;background:rgba(241,119,11,.9);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;box-shadow:0 0 40px rgba(241,119,11,.5)}
+.play-btn:hover{transform:scale(1.1);box-shadow:0 0 60px rgba(241,119,11,.7)}
+.play-btn svg{margin-left:4px}
+.video-caption{position:absolute;bottom:.9rem;left:1rem;right:1rem;font-family:var(--sans);font-weight:300;font-size:.58rem;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+.participants-label{font-family:var(--sans);font-weight:300;font-size:.6rem;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;margin-bottom:1rem}
+.participants-grid{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:600px){.participants-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}}
+@media(min-width:900px){.participants-grid{display:flex;flex-wrap:nowrap;gap:10px;justify-content:space-between}}
+.participant-chip{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--card-border);transition:border-color .2s,transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s;flex:1}
+@media(min-width:900px){.participant-chip{flex-direction:column;align-items:center;text-align:center;padding:20px 12px;gap:10px}}
+.participant-chip:hover{border-color:rgba(158,2,6,.6);transform:scale(1.04);box-shadow:0 4px 20px rgba(158,2,6,.25)}
+.chip-avatar{width:clamp(48px,8vw,64px);height:clamp(48px,8vw,64px);border-radius:50%;background:linear-gradient(135deg,#9E0206,rgba(158,2,6,.4));display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;flex-shrink:0;overflow:hidden;border:2px solid rgba(255,255,255,.12)}
+@media(min-width:900px){.chip-avatar{width:clamp(56px,6vw,80px);height:clamp(56px,6vw,80px);font-size:.95rem}}
+.chip-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.chip-name{font-size:.85rem;font-weight:600;line-height:1.2}
+@media(min-width:900px){.chip-name{font-size:.78rem;font-weight:600;line-height:1.3}}
+.amazon-title{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:1rem}
+.amazon-title em{font-style:normal;white-space:nowrap;background:linear-gradient(135deg,#F1770B,#F3A50A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.amazon-desc{font-size:.9rem;color:rgba(240,237,232,.65);line-height:1.8;margin-bottom:1.75rem}
+.roi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.roi-item{padding:1rem;border-radius:10px;background:rgba(55,52,53,.5);border:1px solid var(--card-border)}
+.roi-n{font-size:1.35rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:4px}
+.roi-l{font-family:var(--sans);font-weight:300;font-size:.56rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+
+/* EXPEDITIONS */
+#expeditions{padding:clamp(60px,8vw,100px) var(--pad)}
+#expeditions h2{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:.35rem}
+#expeditions .sub{font-family:var(--sans);font-weight:300;font-size:.62rem;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-bottom:2.5rem}
+.exp-grid{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:560px){.exp-grid{grid-template-columns:repeat(2,1fr);gap:18px}}
+@media(min-width:900px){.exp-grid{grid-template-columns:repeat(3,1fr);gap:20px}}
+@media(min-width:1200px){.exp-grid{grid-template-columns:repeat(4,1fr)}}
+.exp-card{border-radius:16px;overflow:hidden;background:rgba(30,28,28,.9);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);transition:transform .3s,border-color .3s,box-shadow .3s;display:flex;flex-direction:column}
+.exp-card:hover{transform:translateY(-4px);border-color:rgba(241,119,11,.4);box-shadow:0 16px 50px rgba(0,0,0,.5),var(--glow-red)}
+.exp-image{aspect-ratio:3/2.2;position:relative;overflow:hidden;background:rgba(20,20,20,.8)}
+.exp-image img{width:100%;height:100%;object-fit:cover;transform:scale(1.5);transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.exp-card:hover .exp-image img{transform:scale(1.56)}
+.exp-image img.no-zoom{transform:scale(1)}
+.exp-card:hover .exp-image img.no-zoom{transform:scale(1.04)}
+.exp-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.exp-ph-text{font-size:clamp(.85rem,2vw,1.1rem);font-weight:800;letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:1rem;line-height:1.3;color:rgba(255,255,255,.85);text-shadow:0 2px 12px rgba(0,0,0,.8);position:relative;z-index:1}
+.exp-info{padding:1.25rem 1.4rem 1.4rem;flex:1;display:flex;flex-direction:column}
+.exp-title{font-size:1rem;font-weight:700;margin-bottom:.5rem;line-height:1.3}
+.exp-desc{font-size:.8rem;color:var(--muted);line-height:1.65;flex:1;margin-bottom:1.1rem}
+.btn-comprar{display:inline-flex;align-items:center;justify-content:center;padding:.65rem 1.5rem;background:#9E0206;border-radius:8px;color:#fff;font-size:.82rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .2s;align-self:flex-start}
+.btn-comprar:hover{background:#b50207;transform:translateY(-1px)}
+
+/* DATA */
+#data{padding:clamp(60px,8vw,100px) var(--pad);background:transparent}
+#data h2{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:.3rem}
+.data-sub{font-family:var(--sans);font-weight:300;font-size:.6rem;letter-spacing:.15em;color:var(--muted);margin-bottom:1.5rem}
+
+/* Row 1: map full-width */
+.map-wrap{position:relative;margin-bottom:2.5rem}
+.map-caption{font-family:var(--sans);font-size:clamp(.82rem,1.8vw,.95rem);font-weight:700;letter-spacing:-.01em;color:var(--text);margin-bottom:1.25rem}
+.map-inner{display:grid;grid-template-columns:1fr;gap:24px;align-items:center}
+@media(min-width:700px){.map-inner{grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}}
+.map-img-wrap{position:relative;width:100%;max-width:460px;margin:0 auto}
+@media(min-width:700px){.map-img-wrap{margin:0}}
+.brazil-map-img{width:100%;height:auto;display:block;filter:drop-shadow(0 4px 28px rgba(0,0,0,.5))}
+.map-hotspot{position:absolute;width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(241,119,11,.4);background:rgba(241,119,11,.08);cursor:pointer;transform:translate(-50%,-50%);transition:all .25s}
+.map-hotspot:hover{background:rgba(241,119,11,.28);border-color:var(--accent);box-shadow:0 0 18px rgba(241,119,11,.35)}
+.map-legend-col{display:flex;flex-direction:column;gap:16px}
+.map-legend{display:flex;flex-direction:column;gap:10px}
+.legend-item{display:flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:400;font-size:1rem;letter-spacing:.04em;color:rgba(240,237,232,.85)}
+.legend-dot{width:14px;height:14px;border-radius:50%;background:var(--primary);flex-shrink:0}
+.brazil-svg{width:100%;max-width:360px;display:block;margin:0 auto;filter:drop-shadow(0 4px 24px rgba(0,0,0,.6))}
+.brazil-svg .region{stroke:rgba(255,255,255,.06);stroke-width:1;transition:all .25s ease;cursor:pointer}
+.brazil-svg .region:hover{stroke:var(--accent);stroke-width:1.5;filter:brightness(1.4)}
+.r-norte{fill:rgba(158,2,6,.22)}.r-nordeste{fill:rgba(158,2,6,.38)}.r-co{fill:rgba(158,2,6,.22)}.r-sudeste{fill:rgba(158,2,6,.75)}.r-sul{fill:rgba(158,2,6,.32)}
+.map-tooltip{
+  position:absolute;
+  background:rgba(15,10,8,.92);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(241,119,11,.5);
+  border-radius:12px;
+  padding:.9rem 1.25rem;
+  font-family:var(--sans);
+  color:var(--text);
+  pointer-events:none;
+  opacity:0;
+  transform:scale(0.88);
+  transition:opacity .2s,transform .25s cubic-bezier(.34,1.56,.64,1);
+  white-space:nowrap;
+  z-index:10;
+  min-width:120px;
+  text-align:center;
+}
+.map-tooltip.visible{
+  opacity:1;
+  transform:scale(1);
+}
+.map-tooltip-region{
+  font-size:1rem;
+  font-weight:600;
+  color:var(--text);
+  margin-bottom:.3rem;
+}
+.map-tooltip-pct{
+  font-size:1.8rem;
+  font-weight:800;
+  color:var(--accent);
+  line-height:1;
+  display:block;
+}
+.map-tooltip-sub{
+  font-size:.6rem;
+  font-weight:300;
+  letter-spacing:.1em;
+  color:var(--muted);
+  text-transform:uppercase;
+  margin-top:.2rem;
+}
+.map-legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:1.5rem;justify-content:center}
+@media(min-width:700px){.map-legend{justify-content:flex-start;margin-top:0}}
+.map-legend-col{display:flex;flex-direction:column;gap:16px;justify-content:center}
+.legend-item{display:flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:400;font-size:1rem;letter-spacing:.04em;color:rgba(240,237,232,.85)}
+.legend-dot{width:14px;height:14px;border-radius:50%;background:var(--primary);flex-shrink:0}
+
+/* Row 2: unified demographic card */
+.demo-card{
+  background:rgba(55,52,53,.85);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:0.5px solid rgba(255,255,255,.07);
+  border-radius:16px;
+  overflow:hidden;
+}
+.demo-card-inner{
+  display:grid;
+  grid-template-columns:1fr;
+}
+@media(min-width:600px){
+  .demo-card-inner{grid-template-columns:1fr 1fr}
+}
+/* Desktop: donut scale managed by base CSS */
+
+/* Left: gender */
+.gender-col{
+  padding:24px;
+  border-bottom:0.5px solid rgba(255,255,255,.07);
+}
+@media(min-width:600px){
+  .gender-col{
+    border-bottom:none;
+    border-right:0.5px solid rgba(255,255,255,.07);
+  }
+}
+
+/* Donut: horizontal row — svg left, legend right. Mobile: larger donut */
+.pizza-wrap{display:flex;flex-direction:row;align-items:center;gap:1.5rem;flex-wrap:nowrap;padding:0;width:100%}
+.pizza-svg{width:clamp(140px,22vw,200px);height:clamp(140px,22vw,200px);flex-shrink:0}
+@media(min-width:600px){.pizza-svg{width:clamp(130px,16vw,180px);height:clamp(130px,16vw,180px)}}
+.pizza-legend{display:flex;flex-direction:column;gap:14px;flex:1;min-width:0}
+
+/* Right: age bars */
+.age-col{padding:24px}
+.demo-title{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.12em;color:rgba(240,237,232,.5);text-transform:uppercase;margin-bottom:1.25rem}
+.hbar-rows{display:flex;flex-direction:column;gap:12px}
+.hbar-row{display:flex;align-items:center;gap:10px}
+.hbar-label{font-family:'Share Tech Mono','Courier New',monospace;font-size:.78rem;color:rgba(240,237,232,.6);width:44px;flex-shrink:0;text-align:right;letter-spacing:.04em}
+.hbar-track{flex:1;height:14px;background:rgba(255,255,255,.06);border-radius:99px;overflow:hidden}
+.hbar-fill{height:100%;border-radius:99px;width:0;background:rgba(241,119,11,.5);transition:width 1.4s cubic-bezier(.23,1,.32,1)}
+.hbar-fill.hbar-dominant{background:linear-gradient(90deg,#F1770B,#F3A50A)}
+.hbar-pct{font-family:'Share Tech Mono','Courier New',monospace;font-size:.78rem;color:var(--muted);width:38px;flex-shrink:0;text-align:right}
+.hbar-pct.hbar-dominant{color:var(--accent)}
+
+.donut-leg-item{display:flex;align-items:center;gap:10px}
+.donut-leg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.donut-leg-val{font-size:clamp(1rem,3.5vw,1.15rem);font-weight:800;color:var(--text);line-height:1}
+@media(min-width:600px){.donut-leg-val{font-size:1.1rem}}
+.donut-leg-lbl{font-family:var(--sans);font-weight:300;font-size:clamp(.62rem,2.2vw,.68rem);letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+
+/* Network tabs */
+.net-tabs{display:flex;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.net-tab{padding:.4rem .9rem;border-radius:8px;border:1px solid var(--card-border);background:transparent;color:var(--muted);font-family:var(--sans);font-size:.7rem;font-weight:500;letter-spacing:.08em;cursor:pointer;transition:all .2s}
+.net-tab:hover{border-color:rgba(241,119,11,.4);color:var(--text)}
+.net-tab.active{background:rgba(241,119,11,.15);border-color:rgba(241,119,11,.6);color:var(--text)}
+.net-panel{display:block}
+.net-panel.hidden{display:none}
+
+/* PLATFORM TABS — red box with white icon */
+.plat-tabs{display:flex;justify-content:space-around;gap:0;margin-bottom:0;border-bottom:1px solid var(--card-border);width:100%}
+.plat-tab{
+  flex:1;display:flex;align-items:center;justify-content:center;
+  padding:.75rem .5rem;cursor:pointer;border:none;background:transparent;
+  color:rgba(240,237,232,.3);transition:all .25s;position:relative;
+}
+.plat-tab::after{content:'';position:absolute;bottom:-1px;left:15%;right:15%;height:2px;background:linear-gradient(90deg,#9E0206,var(--accent));opacity:0;transition:opacity .25s;border-radius:1px}
+.plat-tab-icon{
+  width:40px;height:40px;border-radius:10px;
+  background:rgba(158,2,6,.15);
+  border:1px solid rgba(158,2,6,.2);
+  display:flex;align-items:center;justify-content:center;
+  transition:background .25s,border-color .25s,box-shadow .25s;
+}
+.plat-tab-icon svg{width:20px;height:20px;flex-shrink:0;stroke:#fff}
+.plat-tab:hover .plat-tab-icon{background:rgba(158,2,6,.35);border-color:rgba(158,2,6,.6)}
+.plat-tab.active .plat-tab-icon{background:#9E0206;border-color:#9E0206;box-shadow:0 0 18px rgba(158,2,6,.5)}
+.plat-tab.active::after{opacity:1}
+.plat-tab-yt,.plat-tab-ig,.plat-tab-tt,.plat-tab-fb{--plat-color:#9E0206}
+
+/* Performance grid — glassmorphism + hover scale */
+.perf-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:1.5rem}
+@media(min-width:480px){.perf-grid{grid-template-columns:repeat(3,1fr)}}
+.perf-card{
+  padding:1rem;border-radius:12px;
+  background:rgba(55,52,53,.85);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:0.5px solid rgba(255,255,255,.07);
+  transition:transform .3s cubic-bezier(.4,0,.2,1),border-color .3s;
+}
+.perf-card:hover{transform:scale(1.02);border-color:rgba(243,165,10,.2)}
+.perf-val{font-size:1.2rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:4px}
+.perf-lbl{font-family:var(--sans);font-weight:300;font-size:.6rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.perf-note{font-family:var(--sans);font-weight:300;font-size:.7rem;color:rgba(240,237,232,.3);line-height:1.6;border-top:0.5px solid rgba(255,255,255,.07);padding-top:1rem;margin-top:.5rem}
+
+/* Metric cards — glassmorphism + hover scale */
+.met-card{
+  padding:1rem;border-radius:12px;
+  background:rgba(55,52,53,.85);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:0.5px solid rgba(255,255,255,.07);
+  transition:transform .3s cubic-bezier(.4,0,.2,1),border-color .3s;
+}
+.met-card:hover{transform:scale(1.02);border-color:rgba(243,165,10,.2)}
+.met-card-top{display:flex;align-items:center;gap:6px;margin-bottom:.6rem}
+.met-card-top svg,.met-card-top i{width:14px;height:14px;color:var(--accent)!important;flex-shrink:0}
+.met-card-lbl{font-family:var(--sans);font-weight:300;font-size:.6rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.met-card-val{font-size:1.15rem;font-weight:800;color:var(--text);line-height:1}
+.met-card-sub{font-family:var(--sans);font-weight:300;font-size:.58rem;color:var(--muted);margin-top:3px}
+
+/* Content cards — glassmorphism + hover scale */
+.content-card{
+  border-radius:14px;overflow:hidden;
+  background:rgba(55,52,53,.85);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:0.5px solid rgba(255,255,255,.07);
+  transition:border-color .25s,transform .3s cubic-bezier(.4,0,.2,1);
+}
+.content-card:hover{border-color:rgba(243,165,10,.2);transform:translateY(-3px)}
+.content-body{padding:.85rem}
+.content-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem}
+.content-handle{font-family:var(--sans);font-weight:300;font-size:.6rem;color:var(--muted)}
+.content-type{font-family:var(--sans);font-weight:300;font-size:.58rem;color:var(--muted);padding:.2rem .5rem;border:0.5px solid rgba(255,255,255,.07);border-radius:4px}
+.content-date{font-family:var(--sans);font-weight:300;font-size:.6rem;color:var(--muted);margin-bottom:.6rem}
+.content-mets{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.cmet{
+  display:flex;align-items:center;gap:4px;padding:4px 6px;
+  background:rgba(55,52,53,.85);
+  backdrop-filter:blur(16px);
+  border-radius:5px;
+  border:0.5px solid rgba(255,255,255,.07);
+}
+.cmet svg,.cmet i{width:11px;height:11px;color:var(--accent)!important;flex-shrink:0}
+.cmet-val{font-size:.68rem;font-weight:600;color:var(--text)}
+.cmet-lbl{font-family:var(--sans);font-weight:300;font-size:.55rem;color:var(--muted)}
+
+/* ROI items — hover scale */
+.roi-interactive{cursor:pointer;transition:background .25s,border-color .25s,box-shadow .25s,transform .3s cubic-bezier(.4,0,.2,1)}
+.roi-interactive:hover{background:rgba(243,165,10,.08);border-color:rgba(243,165,10,.3);box-shadow:0 0 20px rgba(243,165,10,.1);transform:scale(1.02)}
+
+/* Period button — active red */
+.period-btn{padding:.4rem .85rem;font-family:var(--sans);font-size:.65rem;font-weight:500;letter-spacing:.06em;color:var(--muted);cursor:pointer;border:none;background:transparent;transition:all .2s}
+.period-btn.active{background:rgba(241,119,11,.2);color:var(--text);box-shadow:inset 0 0 0 1px rgba(241,119,11,.5)}
+
+/* DONUT SEG ANIMATION */
+.donut-seg{transition:stroke-dasharray 1.4s cubic-bezier(.23,1,.32,1),stroke-dashoffset 1.4s cubic-bezier(.23,1,.32,1)}
+
+/* PODCAST — identity palette, bento grid */
+#podcast{padding:clamp(60px,8vw,100px) var(--pad);background:transparent}
+.podcast-title{font-size:clamp(1.8rem,4vw,3rem);font-weight:800;letter-spacing:-.02em;margin-bottom:.5rem}
+.podcast-title em{font-style:normal;background:linear-gradient(135deg,#F1770B,#F3A50A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.podcast-positioning{font-size:clamp(.85rem,1.8vw,1rem);font-weight:600;color:rgba(240,237,232,.8);margin-bottom:.85rem}
+.podcast-desc{font-size:.88rem;font-weight:300;color:rgba(240,237,232,.45);line-height:1.8;max-width:700px;margin-bottom:3rem;font-style:italic;border-left:2px solid rgba(241,119,11,.4);padding-left:1.25rem}
+
+/* Asymmetric bento: large left (2/3) + right column (1/3) */
+.podcast-bento{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:700px){.podcast-bento{grid-template-columns:2fr 1fr;gap:12px}}
+.podcast-right{display:flex;flex-direction:column;gap:12px}
+
+/* Glass card — identity colors */
+.glass-card{
+  background:rgba(55,52,53,.85);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;overflow:hidden;
+  transition:border-color .3s,box-shadow .3s,transform .3s;
+  text-decoration:none;color:var(--text);
+  display:flex;flex-direction:column;
+  position:relative;
+}
+.glass-card:hover{
+  border-color:transparent;
+  box-shadow:0 0 0 1px rgba(241,119,11,.6),0 0 30px rgba(241,119,11,.15),0 20px 50px rgba(0,0,0,.5);
+  transform:translateY(-4px);
+}
+/* Gradient border on hover via pseudo */
+.glass-card::before{
+  content:'';position:absolute;inset:0;border-radius:16px;
+  background:linear-gradient(135deg,rgba(241,119,11,.5),rgba(243,165,10,.3));
+  opacity:0;transition:opacity .3s;z-index:0;pointer-events:none;
+  mask:linear-gradient(#fff,#fff) content-box,linear-gradient(#fff,#fff);
+  mask-composite:exclude;padding:1px;
+  -webkit-mask:linear-gradient(#fff,#fff) content-box,linear-gradient(#fff,#fff);
+  -webkit-mask-composite:destination-out;
+}
+.glass-card:hover::before{opacity:1}
+
+/* Spotlight effect */
+.glass-card .spotlight{
+  position:absolute;inset:0;border-radius:16px;pointer-events:none;z-index:1;
+  background:radial-gradient(300px circle at var(--mx,50%) var(--my,50%),rgba(243,165,10,.06) 0%,transparent 70%);
+  opacity:0;transition:opacity .3s;
+}
+.glass-card:hover .spotlight{opacity:1}
+
+.podcast-card-lg .podcast-thumb{aspect-ratio:16/9;position:relative;overflow:hidden}
+.podcast-card-lg .podcast-thumb img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.8);transition:filter .4s,transform .5s}
+.glass-card:hover .podcast-card-lg .podcast-thumb img,.glass-card:hover .podcast-thumb-sm img{filter:brightness(.9);transform:scale(1.02)}
+.podcast-thumb-sm{aspect-ratio:16/8;position:relative;overflow:hidden}
+.podcast-card .podcast-thumb-sm img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.8);transition:filter .4s,transform .5s}
+
+/* Play button — translucent red identity */
+.podcast-play{
+  position:absolute;bottom:.85rem;right:.85rem;
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(241,119,11,.55);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(241,119,11,.7);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 24px rgba(241,119,11,.4);
+  transition:all .25s;
+}
+.glass-card:hover .podcast-play{background:rgba(241,119,11,.8);box-shadow:0 0 36px rgba(241,119,11,.6)}
+.podcast-play-sm{width:30px;height:30px}
+
+.podcast-body{padding:1rem 1.25rem 1.25rem;flex:1;display:flex;flex-direction:column;gap:.4rem;position:relative;z-index:2}
+/* Episode number — mono gold */
+.podcast-ep{
+  font-family:'Courier New','Share Tech Mono',monospace;
+  font-size:.65rem;font-weight:600;
+  color:var(--accent);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.podcast-ep-title{font-size:.88rem;font-weight:700;line-height:1.35;color:var(--text)}
+.podcast-ep-desc{font-size:.74rem;font-weight:300;color:var(--muted);line-height:1.6}
+
+/* Ecosystem card */
+.podcast-card-eco{cursor:default}
+.podcast-card-eco:hover{transform:translateY(-2px)}
+.eco-icons{display:flex;gap:10px;padding:1rem 1.25rem .5rem;opacity:.45;position:relative;z-index:2}
+.eco-icons i{width:16px;height:16px;color:var(--accent)}
+
+/* ROI interactive hover */
+.roi-interactive{cursor:pointer;transition:background .25s,border-color .25s,box-shadow .25s}
+.roi-interactive:hover{background:rgba(243,165,10,.08);border-color:rgba(243,165,10,.3);box-shadow:0 0 20px rgba(243,165,10,.1)}
+.roi-n{font-size:1.35rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:4px;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+
+/* DRAWER */
+.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);z-index:2000;opacity:0;pointer-events:none;transition:opacity .3s}
+.drawer-overlay.open{opacity:1;pointer-events:all}
+.drawer-panel{position:absolute;right:0;top:0;bottom:0;width:min(400px,92vw);background:rgba(10,16,8,.95);backdrop-filter:blur(30px);border-left:1px solid rgba(76,175,80,.2);padding:2rem 1.75rem;display:flex;flex-direction:column;gap:1.25rem;transform:translateX(100%);transition:transform .4s cubic-bezier(.23,1,.32,1)}
+.drawer-overlay.open .drawer-panel{transform:translateX(0)}
+.drawer-head{display:flex;align-items:center;justify-content:space-between}
+.drawer-title{font-size:1.1rem;font-weight:700}
+.drawer-close{width:32px;height:32px;border-radius:8px;border:1px solid var(--card-border);background:transparent;color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s}
+.drawer-close:hover{border-color:var(--accent);color:var(--text)}
+.drawer-close i{width:16px;height:16px}
+.drawer-sub{font-size:.75rem;font-weight:300;color:var(--muted)}
+.drawer-bars{display:flex;flex-direction:column;gap:1rem}
+.drawer-bar-row{display:flex;align-items:center;gap:10px}
+.drawer-bar-lbl{font-size:.72rem;font-weight:500;width:70px;flex-shrink:0}
+.drawer-bar-track{flex:1;height:8px;background:rgba(255,255,255,.07);border-radius:4px;overflow:hidden}
+.drawer-bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#F1770B,#F3A50A);transition:width 1.2s cubic-bezier(.23,1,.32,1)}
+.drawer-bar-pct{font-size:.75rem;font-weight:700;color:var(--accent);width:32px;text-align:right}
+.drawer-note{font-size:.68rem;font-weight:300;color:rgba(240,237,232,.35);line-height:1.6;border-top:1px solid var(--card-border);padding-top:1rem;margin-top:auto}
+
+/* CTA */
+#cta{padding:clamp(80px,10vw,130px) var(--pad);text-align:center;position:relative;overflow:hidden;border-top:1px solid var(--card-border)}
+#cta > *{position:relative;z-index:1}
+.cta-eyebrow{font-family:var(--sans);font-weight:300;font-size:.62rem;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-bottom:1.25rem}
+.cta-h{font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;max-width:680px;margin:0 auto 1.25rem}
+.cta-h em{font-style:normal;background:linear-gradient(135deg,#F1770B,#F3A50A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cta-sub{font-size:.9rem;color:var(--muted);margin-bottom:2.5rem}
+.btn-cta-lg{display:inline-flex;align-items:center;gap:.9rem;padding:1.1rem 2.25rem;background:rgba(158,2,6,.12);border:1px solid rgba(158,2,6,.5);border-radius:14px;color:var(--text);font-family:var(--sans);font-size:.95rem;font-weight:700;letter-spacing:.05em;text-decoration:none;cursor:pointer;transition:all .3s;backdrop-filter:blur(20px);position:relative;overflow:hidden;margin-bottom:2rem}
+.btn-cta-lg::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(158,2,6,.25),rgba(243,165,10,.1));opacity:0;transition:opacity .3s}
+.btn-cta-lg:hover::before{opacity:1}.btn-cta-lg:hover{border-color:var(--accent);box-shadow:0 0 30px rgba(158,2,6,.4);transform:translateY(-3px)}
+.btn-cta-lg svg,.btn-cta-lg span{position:relative;z-index:1}
+.cta-info{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px 20px;font-family:var(--sans);font-weight:300;font-size:.6rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.cta-info a{color:var(--muted);text-decoration:none;transition:color .2s}.cta-info a:hover{color:var(--accent)}
+.cta-sep{opacity:.3}
+
+/* BOTTOM NAV */
+.bottom-nav{
+  position:fixed;bottom:0;left:0;right:0;
+  z-index:1000;
+  background:rgba(0,0,0,0.96);
+  backdrop-filter:blur(32px);-webkit-backdrop-filter:blur(32px);
+  border-top:1px solid rgba(241,119,11,0.25);
+  display:flex;align-items:stretch;
+  height:68px;
+  padding:0 max(8px,env(safe-area-inset-right));
+  padding-bottom:env(safe-area-inset-bottom,0);
+  box-shadow:0 -4px 24px rgba(0,0,0,.6);
+}
+@media(min-width:768px){.bottom-nav{display:none}}
+.nav-item{
+  flex:1;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:4px;cursor:pointer;
+  padding:8px 4px;
+  color:rgba(240,237,232,0.45);
+  font-family:var(--sans);font-weight:300;
+  font-size:clamp(.5rem,.9vw,.62rem);
+  letter-spacing:.06em;text-transform:uppercase;
+  text-decoration:none;
+  transition:color .2s;
+  position:relative;
+}
+.nav-item::before{
+  content:'';
+  position:absolute;top:0;left:20%;right:20%;
+  height:2px;border-radius:0 0 2px 2px;
+  background:linear-gradient(90deg,#F1770B,#F3A50A);
+  opacity:0;transition:opacity .2s;
+}
+.nav-item:hover,.nav-item.active{color:var(--text)}
+.nav-item.active::before{opacity:1}
+.nav-item.active .nav-icon{color:var(--accent)}
+.nav-icon{width:22px;height:22px;flex-shrink:0;transition:color .2s}
+.nav-label{white-space:nowrap}
+
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+@keyframes scrollLogos{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── VIDEO LAYOUT (1 large + 3 smaller row) ── */
+.video-layout{display:flex;flex-direction:column;gap:12px;margin-bottom:2rem}
+.video-card-lg{border-radius:16px;overflow:hidden;text-decoration:none;color:var(--text);display:flex;flex-direction:column}
+.video-thumb-wrap{position:relative;aspect-ratio:16/9;overflow:hidden;background:rgba(30,30,30,.8)}
+.video-thumb-wrap img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.82);transition:transform .5s cubic-bezier(.4,0,.2,1),filter .4s}
+.video-card-lg:hover .video-thumb-wrap img{transform:scale(1.04);filter:brightness(.95)}
+.video-play-btn{position:absolute;bottom:.9rem;right:.9rem;width:48px;height:48px;border-radius:50%;background:rgba(158,2,6,.6);backdrop-filter:blur(8px);border:1px solid rgba(158,2,6,.8);display:flex;align-items:center;justify-content:center;box-shadow:0 0 20px rgba(158,2,6,.4);transition:all .25s}
+.video-card-lg:hover .video-play-btn{background:rgba(158,2,6,.9);box-shadow:0 0 30px rgba(158,2,6,.6)}
+.video-card-body{padding:.85rem 1rem 1rem}
+.video-row-sm{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.video-card-sm{border-radius:12px;overflow:hidden;text-decoration:none;color:var(--text);display:flex;flex-direction:column}
+.video-thumb-wrap-sm{position:relative;aspect-ratio:16/9;overflow:hidden;background:rgba(30,30,30,.8)}
+.video-thumb-wrap-sm img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.8);transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.video-card-sm:hover .video-thumb-wrap-sm img{transform:scale(1.05)}
+.video-play-sm{position:absolute;bottom:.5rem;right:.5rem;width:28px;height:28px;border-radius:50%;background:rgba(158,2,6,.7);display:flex;align-items:center;justify-content:center}
+.video-card-body-sm{padding:.6rem .75rem .75rem}
+
+/* ── MAP IMAGE + HOTSPOTS ── */
+.brazil-map-img{width:100%;display:block}
+.map-hotspot{position:absolute;width:36px;height:36px;border-radius:50%;border:2px solid rgba(241,119,11,.5);background:rgba(241,119,11,.1);cursor:pointer;transform:translate(-50%,-50%);transition:all .25s}
+.map-hotspot:hover{background:rgba(241,119,11,.3);border-color:var(--accent);box-shadow:0 0 16px rgba(241,119,11,.4)}
+.map-hotspot:hover + .map-tooltip,.map-hotspot:hover ~ .map-tooltip{opacity:1}
+
+/* ── DONUT ICON in legend ── */
+.donut-icon{width:18px;height:18px;flex-shrink:0}
+@media(min-width:600px){.donut-icon{width:16px;height:16px}}
+
+/* ── HERO PARALLAX SCROLL ── */
+.hero-bg-image img.hero-img{transform-origin:center center}
+
+/* ── MOBILE DONUT LARGER ── */
+@media(max-width:599px){
+  .pizza-wrap{gap:.75rem}
+  .pizza-svg{width:min(42vw,160px);height:min(42vw,160px)}
+  .gender-col{padding:20px 16px}
+  .age-col{padding:20px 16px}
+}
+
+/* ── DESKTOP TOP NAV ── */
+.top-nav{
+  display:none;
+}
+@media(min-width:768px){
+  .top-nav{
+    display:flex;
+    position:fixed;top:0;left:0;right:0;
+    z-index:1000;
+    height:64px;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 clamp(24px,4vw,60px);
+    background:rgba(0,0,0,0.45);
+    backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(255,255,255,0.07);
+    transition:background .3s;
+  }
+  .top-nav.scrolled{
+    background:rgba(0,0,0,0.82);
+  }
+  .top-nav-logo img{
+    height:36px;object-fit:contain;display:block;
+  }
+  .top-nav-links{
+    display:flex;align-items:center;gap:clamp(20px,3vw,40px);
+  }
+  .top-nav-link{
+    font-family:var(--sans);font-weight:300;
+    font-size:.72rem;letter-spacing:.12em;
+    color:rgba(240,237,232,.55);
+    text-decoration:none;text-transform:uppercase;
+    transition:color .2s;
+    position:relative;
+  }
+  .top-nav-link::after{
+    content:'';position:absolute;bottom:-4px;left:0;right:0;
+    height:1px;background:var(--accent);
+    transform:scaleX(0);transition:transform .2s;transform-origin:left;
+  }
+  .top-nav-link:hover,.top-nav-link.active{color:var(--text)}
+  .top-nav-link:hover::after,.top-nav-link.active::after{transform:scaleX(1)}
+  .top-nav-cta{
+    padding:.45rem 1.25rem;
+    border-radius:8px;
+    background:var(--primary);
+    color:#fff;font-size:.72rem;font-weight:600;letter-spacing:.08em;
+    text-decoration:none;text-transform:uppercase;
+    transition:background .2s,transform .2s;
+  }
+  .top-nav-cta:hover{background:#e06a0a;transform:translateY(-1px)}
+}
+
+/* ═══════════════════════════════
+   DESKTOP POLISH (≥768px)
+═══════════════════════════════ */
+@media(min-width:768px){
+
+  /* Section spacing */
+  #social,#bio,#data,#podcast,#amazon,#expeditions,#cta{
+    padding:clamp(80px,8vw,120px) var(--pad);
+  }
+
+  /* Bio: photo left, text right */
+  .bio-photo-wrap{
+    border-radius:20px;
+  }
+
+  /* Podcast header: text left, image right */
+  .podcast-header-text-wrap{
+    flex:0 1 520px;
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+  }
+
+  /* Amazon text wrap */
+  .amazon-header-text-wrap{
+    flex:1.2;
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+  }
+
+  /* Video layout: always column (1 large + 3 below) */
+
+  /* Participants: handled in base CSS */
+
+  /* ROI grid: 2x2 always — cleaner with large image */
+  .roi-grid{grid-template-columns:repeat(2,1fr)}
+
+  /* CTA centered */
+  #cta{text-align:center;max-width:700px;margin:0 auto}
+
+  /* Expedition cards image taller */
+  .exp-image{aspect-ratio:4/3}
+
+  /* Map on desktop: bigger */
+  .map-img-wrap{max-width:100%}
+}
+
+@media(min-width:1100px){
+  /* Wide layout: more breathing room */
+  /* video layout stays column */
+  /* participants: base CSS handles this */
+}
+
+
+/* HERO DESKTOP */
+@media(min-width:768px){
+  #hero{align-items:flex-start;padding-bottom:clamp(60px,8vw,100px)}
+  .hero-text-block{text-align:left;align-items:flex-start;max-width:560px;padding-left:var(--pad)}
+  .hero-headline{max-width:520px}
+  .hero-tagline{max-width:440px}
+  .hero-stats{justify-content:flex-start}
+  .hero-bg-image img.hero-img{content:url('assets/Asset-Richard-Headerdesk.png');object-position:right center}
+  .hero-bg-image::after{background:linear-gradient(90deg,rgba(0,0,0,.75) 0%,rgba(0,0,0,.4) 50%,rgba(0,0,0,.05) 100%)}
+}
+</style>
+</head>
+<body>
+<div id="page-bg" aria-hidden="true"></div>
+
+<!-- HERO -->
+<section id="hero">
+<div class="hero-bg-image">
+  <picture>
+    <source media="(min-width:768px)" srcset="assets/Asset-Richard-Headerdesk.png">
+    <img class="hero-img" src="assets/Asset-Richard-Header.png" alt="Richard Rasmussen">
+  </picture>
+</div>
+<div class="hero-text-block">
+  <div class="richard-logo">
+    <img src="assets/Asset-Richard-Logo.png" class="logo-img" alt="Richard Rasmussen">
+  </div>
+  <h1 class="hero-headline">O maior alcance orgânico<br>do nicho de <em>natureza no Brasil.</em></h1>
+  <p class="hero-tagline">Biólogo, aventureiro e jornalista.<br>20 anos levando a natureza às telas do país.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num" data-count="20.1" data-suffix="Mi">20,1Mi</div><div class="lbl">Seguidores totais</div></div>
+    <div class="hero-stat"><div class="num" data-count="47.6" data-suffix="Mi">47,6Mi</div><div class="lbl">Alcance/mês Reels</div></div>
+    <div class="hero-stat"><div class="num" data-count="6.73" data-suffix="Mi">6,73Mi</div><div class="lbl">Inscritos YouTube</div></div>
+  </div>
+  <a href="https://wa.me/5511943346332" class="btn-cta" target="_blank">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span>Quero ser parceiro</span>
+  </a>
+</div>
+</section>
+
+<!-- LOGOS -->
+<div class="logos-strip">
+  <div class="logos-track">
+    <span class="logo-word">Globo</span><span class="logo-sep">·</span><span class="logo-word">Record</span><span class="logo-sep">·</span><span class="logo-word">SBT</span><span class="logo-sep">·</span><span class="logo-word">Band</span><span class="logo-sep">·</span><span class="logo-word">National Geographic</span><span class="logo-sep">·</span><span class="logo-word">Animal Planet</span><span class="logo-sep">·</span><span class="logo-word">Canal Rural</span><span class="logo-sep">·</span><span class="logo-word">Travel Box Brazil</span><span class="logo-sep">·</span><span class="logo-word">Cultura</span><span class="logo-sep">·</span><span class="logo-word">Tuparanã</span><span class="logo-sep">·</span>
+    <span class="logo-word">Globo</span><span class="logo-sep">·</span><span class="logo-word">Record</span><span class="logo-sep">·</span><span class="logo-word">SBT</span><span class="logo-sep">·</span><span class="logo-word">Band</span><span class="logo-sep">·</span><span class="logo-word">National Geographic</span><span class="logo-sep">·</span><span class="logo-word">Animal Planet</span><span class="logo-sep">·</span><span class="logo-word">Canal Rural</span><span class="logo-sep">·</span><span class="logo-word">Travel Box Brazil</span><span class="logo-sep">·</span><span class="logo-word">Cultura</span><span class="logo-sep">·</span><span class="logo-word">Tuparanã</span><span class="logo-sep">·</span>
+  </div>
+</div>
+
+<!-- PRESENÇA DIGITAL -->
+<section id="social" class="section-parallax">
+<div class="social-header reveal">
+  <div class="section-label">Presença digital</div>
+  <h2>Números que <em style="font-style:normal;background:linear-gradient(135deg,#F1770B,#F3A50A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">falam por si</em></h2>
+  <div class="social-total"><span class="total-num" data-count="20.1" data-suffix="Mi">~20,1Mi</span><span class="total-lbl">seguidores totais</span></div>
+</div>
+
+<!-- Platform tabs -->
+<div class="plat-tabs reveal">
+  <button class="plat-tab plat-tab-ig active" data-plat="instagram" aria-label="Instagram">
+    <div class="plat-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+  </button>
+  <button class="plat-tab plat-tab-tt" data-plat="tiktok" aria-label="TikTok">
+    <div class="plat-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></div>
+  </button>
+  <button class="plat-tab plat-tab-yt" data-plat="youtube" aria-label="YouTube">
+    <div class="plat-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></div>
+  </button>
+  <button class="plat-tab plat-tab-fb" data-plat="facebook" aria-label="Facebook">
+    <div class="plat-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
+  </button>
+</div>
+
+<!-- INSTAGRAM PANEL -->
+<div class="plat-panel active" id="panel-instagram">
+  <div class="plat-head">
+    <div class="plat-identity">
+      <div class="plat-icon-wrap" style="background:#9E0206;border:1px solid #9E0206;box-shadow:0 0 14px rgba(158,2,6,.45)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </div>
+      <div>
+        <div class="plat-followers">4,0Mi</div>
+        <div class="plat-handle">@richardselvagem · 10.908 posts</div>
+      </div>
+    </div>
+    <div class="period-toggle">
+      <button class="period-btn" data-period="7d" data-plat="instagram">7 dias</button>
+      <button class="period-btn active" data-period="28d" data-plat="instagram">28 dias</button>
+    </div>
+  </div>
+
+  <div class="met-grid" id="ig-mets">
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="eye"></i><span class="met-card-lbl">Impressões</span></div>
+      <div class="met-card-val" data-ig-7d="25,9M" data-ig-28d="168,1M">168,1M</div>
+      <div class="met-card-sub">últimos 28 dias</div>
+    </div>
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="zap"></i><span class="met-card-lbl">Alcance total</span></div>
+      <div class="met-card-val" data-ig-7d="3,0M" data-ig-28d="15,2M">15,2M</div>
+      <div class="met-card-sub">pessoas únicas</div>
+    </div>
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="heart"></i><span class="met-card-lbl">Curtidas</span></div>
+      <div class="met-card-val" data-ig-7d="779,9k" data-ig-28d="7,9M">7,9M</div>
+      <div class="met-card-sub">posts</div>
+    </div>
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="trending-up"></i><span class="met-card-lbl">Engajamento</span></div>
+      <div class="met-card-val" data-ig-7d="1,0M" data-ig-28d="9,0M">9,0M</div>
+      <div class="met-card-sub">total</div>
+    </div>
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="play-circle"></i><span class="met-card-lbl">Alcance médio</span></div>
+      <div class="met-card-val" data-ig-7d="47,9k" data-ig-28d="107,4k">107,4k</div>
+      <div class="met-card-sub">por post</div>
+    </div>
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="file-text"></i><span class="met-card-lbl">Posts</span></div>
+      <div class="met-card-val" data-ig-7d="62" data-ig-28d="142">142</div>
+      <div class="met-card-sub">publicações</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- TIKTOK PANEL -->
+<div class="plat-panel" id="panel-tiktok">
+  <div class="plat-head">
+    <div class="plat-identity">
+      <div class="plat-icon-wrap" style="background:#9E0206;border:1px solid #9E0206;box-shadow:0 0 14px rgba(158,2,6,.45)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+      </div>
+      <div>
+        <div class="plat-followers">2,4Mi</div>
+        <div class="plat-handle">@richardrasmussenselvagem</div>
+      </div>
+    </div>
+    <div class="period-toggle">
+      <button class="period-btn" data-period="7d" data-plat="tiktok">7 dias</button>
+      <button class="period-btn active" data-period="28d" data-plat="tiktok">28 dias</button>
+    </div>
+  </div>
+
+  <div class="met-grid">
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="eye"></i><span class="met-card-lbl">Impressões</span></div>
+      <div class="met-card-val" data-tt-7d="692,6k" data-tt-28d="3,6M">3,6M</div>
+      <div class="met-card-sub">últimos 28 dias</div>
+    </div>
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="trending-up"></i><span class="met-card-lbl">Engajamento</span></div>
+      <div class="met-card-val" data-tt-7d="48,6k" data-tt-28d="242,5k">242,5k</div>
+      <div class="met-card-sub">total</div>
+    </div>
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="heart"></i><span class="met-card-lbl">Curtidas</span></div>
+      <div class="met-card-val" data-tt-7d="47,2k" data-tt-28d="236,7k">236,7k</div>
+      <div class="met-card-sub">total</div>
+    </div>
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="bar-chart-2"></i><span class="met-card-lbl">Engaj. médio</span></div>
+      <div class="met-card-val" data-tt-7d="4.053" data-tt-28d="5.159">5.159</div>
+      <div class="met-card-sub">por post</div>
+    </div>
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="file-text"></i><span class="met-card-lbl">Posts</span></div>
+      <div class="met-card-val" data-tt-7d="12" data-tt-28d="47">47</div>
+      <div class="met-card-sub">publicações</div>
+    </div>
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="thumbs-up"></i><span class="met-card-lbl">Total gostos</span></div>
+      <div class="met-card-val">18,6Mi</div>
+      <div class="met-card-sub">acumulados</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- YOUTUBE PANEL -->
+<div class="plat-panel" id="panel-youtube">
+  <div class="plat-head">
+    <div class="plat-identity">
+      <div class="plat-icon-wrap" style="background:#9E0206;border:1px solid #9E0206;box-shadow:0 0 14px rgba(158,2,6,.45)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+      </div>
+      <div>
+        <div class="plat-followers">6,78Mi</div>
+        <div class="plat-handle">@RichardRasmussenSelvagem · 2.200+ vídeos</div>
+      </div>
+    </div>
+    <div class="period-toggle">
+      <button class="period-btn" data-period="7d" data-plat="youtube">7 dias</button>
+      <button class="period-btn active" data-period="28d" data-plat="youtube">28 dias</button>
+    </div>
+  </div>
+
+  <div class="met-grid">
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="eye"></i><span class="met-card-lbl">Views</span></div>
+      <div class="met-card-val" data-yt-7d="2,4M" data-yt-28d="34,3M">34,3M</div>
+      <div class="met-card-sub">últimos 28 dias</div>
+    </div>
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="trending-up"></i><span class="met-card-lbl">Engajamento</span></div>
+      <div class="met-card-val" data-yt-7d="90,3k" data-yt-28d="1,57M">1,57M</div>
+      <div class="met-card-sub">total</div>
+    </div>
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="heart"></i><span class="met-card-lbl">Curtidas</span></div>
+      <div class="met-card-val" data-yt-7d="88,5k" data-yt-28d="1,54M">1,54M</div>
+      <div class="met-card-sub">total</div>
+    </div>
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="bar-chart-2"></i><span class="met-card-lbl">Média views</span></div>
+      <div class="met-card-val" data-yt-7d="40,7k" data-yt-28d="135,7k">135,7k</div>
+      <div class="met-card-sub">por vídeo</div>
+    </div>
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="file-text"></i><span class="met-card-lbl">Vídeos</span></div>
+      <div class="met-card-val" data-yt-7d="58" data-yt-28d="253">253</div>
+      <div class="met-card-sub">publicados</div>
+    </div>
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="users"></i><span class="met-card-lbl">Total vídeos</span></div>
+      <div class="met-card-val">2.217</div>
+      <div class="met-card-sub">no canal principal</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FACEBOOK PANEL -->
+<div class="plat-panel" id="panel-facebook">
+  <div class="plat-head">
+    <div class="plat-identity">
+      <div class="plat-icon-wrap" style="background:#9E0206;border:1px solid #9E0206;box-shadow:0 0 14px rgba(158,2,6,.45)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </div>
+      <div>
+        <div class="plat-followers">7Mi</div>
+        <div class="plat-handle">Maior base no nicho natureza no Brasil</div>
+      </div>
+    </div>
+  </div>
+  <div class="met-grid">
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="users"></i><span class="met-card-lbl">Seguidores</span></div>
+      <div class="met-card-val">7Mi</div>
+      <div class="met-card-sub">comunidade ativa</div>
+    </div>
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="eye"></i><span class="met-card-lbl">Impressões</span></div>
+      <div class="met-card-val">206Mi</div>
+      <div class="met-card-sub">últimos 28 dias</div>
+    </div>
+    <div class="met-card">
+      <div class="met-card-top"><i data-lucide="heart"></i><span class="met-card-lbl">Curtidas</span></div>
+      <div class="met-card-val">9,7M</div>
+      <div class="met-card-sub">últimos 28 dias</div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<!-- BIO -->
+<section id="bio" class="section-parallax">
+<div class="bio-grid">
+  <div class="bio-photo-wrap reveal">
+    <img src="assets/Asset-Richard-Quem-é.png" style="width:100%;height:auto;object-fit:contain;display:block" alt="Richard Rasmussen">
+  </div>
+  <div class="bio-content reveal reveal-delay-2">
+    <div class="section-label">Quem é</div>
+    <h2 class="bio-name">Richard<br>Rasmussen</h2>
+    <div class="bio-badge">Biólogo · Aventureiro · Jornalista</div>
+    <p class="bio-text">Por mais de 20 anos, Richard Rasmussen tem levado as culturas e a natureza do planeta às telas do Brasil. Passou pelas principais redes de televisão nacionais, Record, Globo, SBT, Band, e é hoje uma das principais figuras do canal National Geographic na América Latina e no Animal Planet.</p>
+    <p class="bio-text">Em 2016 criou seu próprio canal no YouTube, que mantém forte ritmo de crescimento. Com suas sólidas mídias sociais, construiu um dos maiores ecossistemas de conteúdo de natureza do país. Alcance orgânico que supera grandes veículos tradicionais.</p>
+    <div class="bio-creds">
+      <div class="cred">CRBio 068861/01-D · Biólogo registrado</div>
+      <div class="cred">contato@richardrasmussen.com.br</div>
+      <div class="cred">São Paulo, SP · Brasil</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- DATA -->
+<section id="data" class="section-parallax">
+<div class="reveal">
+  <div class="section-label">Inteligência de audiência</div>
+  <h2>Quem acompanha Richard</h2>
+  <p class="data-sub">Dados coletados em 2025 · Meta &amp; YouTube Analytics · Playnest</p>
+</div>
+
+<!-- Network selector -->
+<div class="net-tabs reveal">
+  <button class="net-tab active" data-net="geral">Geral</button>
+  <button class="net-tab" data-net="instagram">Instagram</button>
+  <button class="net-tab" data-net="tiktok">TikTok</button>
+  <button class="net-tab" data-net="youtube">YouTube</button>
+</div>
+
+<!-- Row 1: Map — asset image + hotspots -->
+<div class="map-wrap reveal">
+  <div class="map-caption">Distribuição geográfica · Brasil</div>
+  <div class="map-inner">
+    <div class="map-img-wrap">
+      <div class="map-tooltip" id="mapTooltip"></div>
+      <img src="assets/Asset-Richard-Distribuição-geográfica.png" class="brazil-map-img" alt="Distribuição geográfica Brasil">
+      <!-- Hotspots — transparentes sobre o asset -->
+      <div class="map-hotspot" style="top:22%;left:30%" data-region="Norte" data-pct="10%"></div>
+      <div class="map-hotspot" style="top:28%;left:68%" data-region="Nordeste" data-pct="15%"></div>
+      <div class="map-hotspot" style="top:52%;left:42%" data-region="Centro-Oeste" data-pct="10%"></div>
+      <div class="map-hotspot" style="top:70%;left:60%" data-region="Sudeste" data-pct="53%"></div>
+      <div class="map-hotspot" style="top:85%;left:48%" data-region="Sul" data-pct="12%"></div>
+    </div>
+    <div class="map-legend-col">
+      <div class="map-legend" style="flex-direction:column;gap:12px;margin:0">
+        <div class="legend-item"><div class="legend-dot" style="opacity:.22"></div><span>Norte · 10%</span></div>
+        <div class="legend-item"><div class="legend-dot" style="opacity:.38"></div><span>Nordeste · 15%</span></div>
+        <div class="legend-item"><div class="legend-dot" style="opacity:.22"></div><span>Centro-Oeste · 10%</span></div>
+        <div class="legend-item"><div class="legend-dot" style="opacity:.75"></div><span>Sudeste · <strong style="color:var(--accent)">53%</strong></span></div>
+        <div class="legend-item"><div class="legend-dot" style="opacity:.32"></div><span>Sul · 12%</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Row 2: Unified demographic card -->
+<div class="demo-card reveal">
+  <!-- GERAL panel -->
+  <div class="net-panel" data-panel="geral">
+    <div class="demo-card-inner">
+      <div class="gender-col">
+        <div class="demo-title">Gênero</div>
+        <div class="pizza-wrap">
+          <svg class="pizza-svg" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="donutGradMain" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#F1770B"/><stop offset="100%" stop-color="#F3A50A"/>
+              </linearGradient>
+              <filter id="donutGlow"><feGaussianBlur stdDeviation="2.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <circle cx="90" cy="90" r="66" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="20"/>
+            <circle cx="90" cy="90" r="66" fill="none" stroke="url(#donutGradMain)" stroke-width="20"
+              stroke-dasharray="0 414.7" data-dash="252.1 414.7"
+              stroke-linecap="butt" transform="rotate(-90 90 90)"
+              class="donut-seg" filter="url(#donutGlow)"/>
+            <circle cx="90" cy="90" r="66" fill="none"
+              stroke="rgba(239,97,68,0.7)" stroke-width="20"
+              stroke-dasharray="0 414.7" data-dash="117.8 414.7" data-offset="-252.1"
+              stroke-linecap="butt" transform="rotate(-90 90 90)"
+              class="donut-seg" style="transition-delay:.1s"/>
+            <circle cx="90" cy="90" r="66" fill="none"
+              stroke="rgba(255,255,255,0.1)" stroke-width="20"
+              stroke-dasharray="0 414.7" data-dash="44.8 414.7" data-offset="-369.9"
+              stroke-linecap="butt" transform="rotate(-90 90 90)"
+              class="donut-seg" style="transition-delay:.2s"/>
+            <text x="90" y="84" text-anchor="middle" font-size="17" font-weight="800" fill="#F0EDE8" font-family="'Noto Sans TC',sans-serif">60,8%</text>
+            <text x="90" y="99" text-anchor="middle" font-size="7.5" font-weight="300" fill="rgba(240,237,232,0.4)" font-family="'Noto Sans TC',sans-serif" letter-spacing="1.5">MASC.</text>
+          </svg>
+          <div class="pizza-legend">
+            <div class="donut-leg-item"><div class="donut-leg-dot" style="background:linear-gradient(135deg,#F1770B,#F3A50A)"></div><div><div class="donut-leg-val">60,8%</div><div class="donut-leg-lbl">Masculino</div></div></div>
+            <div class="donut-leg-item"><div class="donut-leg-dot" style="background:rgba(239,97,68,.7)"></div><div><div class="donut-leg-val">28,4%</div><div class="donut-leg-lbl">Feminino</div></div></div>
+            <div class="donut-leg-item"><div class="donut-leg-dot" style="background:rgba(255,255,255,.12)"></div><div><div class="donut-leg-val">10,8%</div><div class="donut-leg-lbl">Outros</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="age-col">
+        <div class="demo-title">Faixa etária</div>
+        <div class="hbar-rows">
+          <div class="hbar-row"><div class="hbar-label">13–17</div><div class="hbar-track"><div class="hbar-fill" data-w="1.6"></div></div><div class="hbar-pct">1,6%</div></div>
+          <div class="hbar-row"><div class="hbar-label">18–24</div><div class="hbar-track"><div class="hbar-fill" data-w="15.1"></div></div><div class="hbar-pct">15,1%</div></div>
+          <div class="hbar-row"><div class="hbar-label">25–34</div><div class="hbar-track"><div class="hbar-fill hbar-dominant" data-w="39.4"></div></div><div class="hbar-pct hbar-dominant">39,4%</div></div>
+          <div class="hbar-row"><div class="hbar-label">35–44</div><div class="hbar-track"><div class="hbar-fill" data-w="26.2"></div></div><div class="hbar-pct">26,2%</div></div>
+          <div class="hbar-row"><div class="hbar-label">45–54</div><div class="hbar-track"><div class="hbar-fill" data-w="12.2"></div></div><div class="hbar-pct">12,2%</div></div>
+          <div class="hbar-row"><div class="hbar-label">55–64</div><div class="hbar-track"><div class="hbar-fill" data-w="4"></div></div><div class="hbar-pct">4%</div></div>
+          <div class="hbar-row"><div class="hbar-label">65+</div><div class="hbar-track"><div class="hbar-fill" data-w="1.5"></div></div><div class="hbar-pct">1,5%</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSTAGRAM panel -->
+  <div class="net-panel hidden" data-panel="instagram">
+    <div class="demo-card-inner">
+      <div class="gender-col">
+        <div class="demo-title">Gênero</div>
+        <div class="pizza-wrap">
+          <svg class="pizza-svg" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="donutGradMain2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#F1770B"/><stop offset="100%" stop-color="#F3A50A"/>
+              </linearGradient>
+              <filter id="donutGlow2"><feGaussianBlur stdDeviation="2.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <circle cx="90" cy="90" r="66" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="20"/>
+            <circle cx="90" cy="90" r="66" fill="none" stroke="url(#donutGradMain2)" stroke-width="20"
+              stroke-dasharray="0 414.7" data-dash="252.1 414.7"
+              stroke-linecap="butt" transform="rotate(-90 90 90)"
+              class="donut-seg" filter="url(#donutGlow2)"/>
+            <circle cx="90" cy="90" r="66" fill="none"
+              stroke="rgba(239,97,68,0.7)" stroke-width="20"
+              stroke-dasharray="0 414.7" data-dash="117.8 414.7" data-offset="-252.1"
+              stroke-linecap="butt" transform="rotate(-90 90 90)"
+              class="donut-seg" style="transition-delay:.1s"/>
+            <circle cx="90" cy="90" r="66" fill="none"
+              stroke="rgba(255,255,255,0.1)" stroke-width="20"
+              stroke-dasharray="0 414.7" data-dash="44.8 414.7" data-offset="-369.9"
+              stroke-linecap="butt" transform="rotate(-90 90 90)"
+              class="donut-seg" style="transition-delay:.2s"/>
+            <text x="90" y="84" text-anchor="middle" font-size="17" font-weight="800" fill="#F0EDE8" font-family="'Noto Sans TC',sans-serif">60,8%</text>
+            <text x="90" y="99" text-anchor="middle" font-size="7.5" font-weight="300" fill="rgba(240,237,232,0.4)" font-family="'Noto Sans TC',sans-serif" letter-spacing="1.5">MASC.</text>
+          </svg>
+          <div class="pizza-legend">
+            <div class="donut-leg-item"><div class="donut-leg-dot" style="background:linear-gradient(135deg,#F1770B,#F3A50A)"></div><div><div class="donut-leg-val">60,8%</div><div class="donut-leg-lbl">Masculino</div></div></div>
+            <div class="donut-leg-item"><div class="donut-leg-dot" style="background:rgba(239,97,68,.7)"></div><div><div class="donut-leg-val">28,4%</div><div class="donut-leg-lbl">Feminino</div></div></div>
+            <div class="donut-leg-item"><div class="donut-leg-dot" style="background:rgba(255,255,255,.12)"></div><div><div class="donut-leg-val">10,8%</div><div class="donut-leg-lbl">Outros</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="age-col">
+        <div class="demo-title">Faixa etária</div>
+        <div class="hbar-rows">
+          <div class="hbar-row"><div class="hbar-label">13–17</div><div class="hbar-track"><div class="hbar-fill" data-w="1.6"></div></div><div class="hbar-pct">1,6%</div></div>
+          <div class="hbar-row"><div class="hbar-label">18–24</div><div class="hbar-track"><div class="hbar-fill" data-w="15.1"></div></div><div class="hbar-pct">15,1%</div></div>
+          <div class="hbar-row"><div class="hbar-label">25–34</div><div class="hbar-track"><div class="hbar-fill hbar-dominant" data-w="39.4"></div></div><div class="hbar-pct hbar-dominant">39,4%</div></div>
+          <div class="hbar-row"><div class="hbar-label">35–44</div><div class="hbar-track"><div class="hbar-fill" data-w="26.2"></div></div><div class="hbar-pct">26,2%</div></div>
+          <div class="hbar-row"><div class="hbar-label">45–54</div><div class="hbar-track"><div class="hbar-fill" data-w="12.2"></div></div><div class="hbar-pct">12,2%</div></div>
+          <div class="hbar-row"><div class="hbar-label">55–64</div><div class="hbar-track"><div class="hbar-fill" data-w="4"></div></div><div class="hbar-pct">4%</div></div>
+          <div class="hbar-row"><div class="hbar-label">65+</div><div class="hbar-track"><div class="hbar-fill" data-w="1.5"></div></div><div class="hbar-pct">1,5%</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIKTOK panel -->
+  <div class="net-panel hidden" data-panel="tiktok">
+    <div style="padding:24px">
+      <div class="demo-title">Performance TikTok</div>
+      <div class="perf-grid">
+        <div class="perf-card"><div class="perf-val">2,4Mi</div><div class="perf-lbl">Seguidores</div></div>
+        <div class="perf-card"><div class="perf-val">3,6Mi</div><div class="perf-lbl">Impressões · 28d</div></div>
+        <div class="perf-card"><div class="perf-val">242k</div><div class="perf-lbl">Engajamento · 28d</div></div>
+        <div class="perf-card"><div class="perf-val">236k</div><div class="perf-lbl">Curtidas · 28d</div></div>
+        <div class="perf-card"><div class="perf-val">47</div><div class="perf-lbl">Posts · 28d</div></div>
+        <div class="perf-card"><div class="perf-val">5.159</div><div class="perf-lbl">Engaj. médio/post</div></div>
+      </div>
+      <p class="perf-note">Dados demográficos detalhados disponíveis via Instagram (plataforma com maior profundidade analítica).</p>
+    </div>
+  </div>
+
+  <!-- YOUTUBE panel -->
+  <div class="net-panel hidden" data-panel="youtube">
+    <div style="padding:24px">
+      <div class="demo-title">Performance YouTube</div>
+      <div class="perf-grid">
+        <div class="perf-card"><div class="perf-val">6,78Mi</div><div class="perf-lbl">Inscritos totais</div></div>
+        <div class="perf-card"><div class="perf-val">34,3Mi</div><div class="perf-lbl">Views · 28d</div></div>
+        <div class="perf-card"><div class="perf-val">1,57Mi</div><div class="perf-lbl">Engajamento · 28d</div></div>
+        <div class="perf-card"><div class="perf-val">135,7k</div><div class="perf-lbl">Média views/vídeo</div></div>
+        <div class="perf-card"><div class="perf-val">253</div><div class="perf-lbl">Vídeos · 28d</div></div>
+        <div class="perf-card"><div class="perf-val">2.217</div><div class="perf-lbl">Total de vídeos</div></div>
+      </div>
+      <p class="perf-note">Dados demográficos detalhados disponíveis via Instagram (plataforma com maior profundidade analítica).</p>
+    </div>
+  </div>
+
+</div><!-- end demo-card -->
+</section>
+
+<!-- RICHARD RECEBE PODCAST -->
+<section id="podcast" class="section-parallax">
+<div class="podcast-header reveal">
+  <div class="podcast-header-text-wrap">
+    <div class="podcast-header-title">
+      <div class="section-label">Podcast</div>
+      <h2 class="podcast-title">Richard <em>Recebe</em></h2>
+    </div>
+    <div class="podcast-header-body">
+      <p class="podcast-positioning">O encontro entre a experiência de campo e o conhecimento técnico.</p>
+      <p class="podcast-desc">"Onde a ciência, a sobrevivência e o conservacionismo se encontram. Richard Recebe é uma série de diálogos em formato long-form, desenhada para explorar as mentes mais brilhantes e controversas do cenário ambiental. Muito além da aventura, é o espaço onde a autoridade de Richard Rasmussen se consolida através da troca de saberes com especialistas, exploradores e líderes de opinião."</p>
+    </div>
+  </div>
+  <div class="section-image-block reveal reveal-delay-2">
+    <img src="assets/Asset-Richard-Recebe.png" onerror="this.style.display='none'" alt="Richard Recebe">
+  </div>
+</div>
+
+<div class="video-layout reveal">
+  <!-- Large featured video -->
+  <a href="https://www.youtube.com/watch?v=l5hvrZ54HzE" target="_blank" class="video-card-lg glass-card">
+    <div class="spotlight"></div>
+    <div class="video-thumb-wrap">
+      <img src="https://img.youtube.com/vi/l5hvrZ54HzE/maxresdefault.jpg" alt="Richard Recebe" onerror="this.style.background='rgba(55,52,53,.5)'">
+      <div class="video-play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="video-card-body">
+      <div class="podcast-ep">#0038 · Destaque</div>
+      <div class="podcast-ep-title">Agro e Meio Ambiente: Conflito ou Caminho em Comum?</div>
+    </div>
+  </a>
+  <!-- 3 smaller videos -->
+  <div class="video-row-sm">
+    <a href="https://www.youtube.com/watch?v=h2hZxPhE5rA" target="_blank" class="video-card-sm glass-card">
+      <div class="spotlight"></div>
+      <div class="video-thumb-wrap-sm">
+        <img src="https://img.youtube.com/vi/h2hZxPhE5rA/maxresdefault.jpg" alt="">
+        <div class="video-play-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="video-card-body-sm"><div class="podcast-ep">#0037</div><div class="podcast-ep-title">Rodrigo Pantera: Sobrevivência e Tática</div></div>
+    </a>
+    <a href="https://www.youtube.com/watch?v=qTvZMANjYqk" target="_blank" class="video-card-sm glass-card">
+      <div class="spotlight"></div>
+      <div class="video-thumb-wrap-sm">
+        <img src="https://img.youtube.com/vi/qTvZMANjYqk/maxresdefault.jpg" alt="">
+        <div class="video-play-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="video-card-body-sm"><div class="podcast-ep">#0041</div><div class="podcast-ep-title">Episódio especial</div></div>
+    </a>
+    <a href="https://www.youtube.com/watch?v=4chGCmntFnU" target="_blank" class="video-card-sm glass-card">
+      <div class="spotlight"></div>
+      <div class="video-thumb-wrap-sm">
+        <img src="https://img.youtube.com/vi/4chGCmntFnU/maxresdefault.jpg" alt="">
+        <div class="video-play-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="video-card-body-sm"><div class="podcast-ep">#0040</div><div class="podcast-ep-title">Episódio especial</div></div>
+    </a>
+  </div>
+</div>
+</section>
+
+<!-- TRANSAMAZÔNICA -->
+<section id="amazon" class="section-parallax">
+<!-- Row 1: header + image -->
+<div class="amazon-header reveal">
+  <div class="amazon-header-text-wrap" style="flex:1;min-width:0">
+  <div class="amazon-header-title">
+    <div class="section-label">Expedição ao vivo · Brasil</div>
+    <h2 class="amazon-big-title"><span style="-webkit-text-fill-color:#F0EDE8;color:#F0EDE8">Transamazônica</span> <span style="background:linear-gradient(135deg,#F1770B,#F3A50A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">2026</span></h2>
+  </div>
+  <div class="amazon-header-body">
+    <p class="amazon-desc">Uma das maiores expedições de conteúdo ao vivo já realizadas no Brasil. Richard liderou uma jornada de cerca de 1.500 km entre a BR-230 e a BR-319, transmitindo diretamente da Amazônia, dando visibilidade às comunidades locais e à infraestrutura da região.</p>
+    <p class="amazon-desc">Co-liderada com Renato Cariani, reuniu os maiores nomes do cenário fitness e entretenimento digital em uma operação inédita de alcance e impacto real.</p>
+    <div class="roi-grid">
+      <div class="roi-item roi-interactive" data-drawer="alcance">
+        <div class="roi-n roi-count" data-target="47.6" data-suffix="Mi">0</div>
+        <div class="roi-l">Alcance mensal <i data-lucide="bar-chart-2" style="width:12px;height:12px;vertical-align:middle;margin-left:4px;opacity:.5"></i></div>
+      </div>
+      <div class="roi-item roi-interactive">
+        <div class="roi-n roi-count" data-target="1500" data-suffix=" km" data-integer="true">0</div>
+        <div class="roi-l">BR-230 + BR-319</div>
+      </div>
+      <div class="roi-item roi-interactive">
+        <div class="roi-n roi-count" data-target="7" data-suffix="+" data-integer="true">0</div>
+        <div class="roi-l">Influenciadores parceiros</div>
+      </div>
+      <div class="roi-item roi-interactive">
+        <div class="roi-n roi-count" data-target="20.1" data-suffix="Mi">0</div>
+        <div class="roi-l">Seguidores combinados</div>
+      </div>
+    </div>
+  </div>
+  </div><!-- end text-wrap -->
+  <div class="section-image-block reveal reveal-delay-2">
+    <img src="assets/Asset-Richard-Transamazônica2026.png" onerror="this.style.display='none'" alt="Transamazônica">
+  </div>
+</div>
+
+<!-- Row 2: videos + participants -->
+<div class="video-layout reveal">
+  <a href="https://www.youtube.com/watch?v=cJxChLTwRl0" target="_blank" class="video-card-lg glass-card">
+    <div class="spotlight"></div>
+    <div class="video-thumb-wrap">
+      <img src="https://img.youtube.com/vi/cJxChLTwRl0/maxresdefault.jpg" alt="Transamazônica">
+      <div class="video-play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="video-card-body">
+      <div class="podcast-ep">Destaque · Ao vivo</div>
+      <div class="podcast-ep-title">Transamazônica 2026: Expedição Completa</div>
+    </div>
+  </a>
+  <div class="video-row-sm">
+    <a href="https://www.youtube.com/watch?v=raZY4zKTw1A" target="_blank" class="video-card-sm glass-card">
+      <div class="spotlight"></div>
+      <div class="video-thumb-wrap-sm"><img src="https://img.youtube.com/vi/raZY4zKTw1A/maxresdefault.jpg" alt=""><div class="video-play-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="video-card-body-sm"><div class="podcast-ep">YouTube</div><div class="podcast-ep-title">Transamazônica: Parte 1</div></div>
+    </a>
+    <a href="https://www.youtube.com/watch?v=9tBnJKK55w0" target="_blank" class="video-card-sm glass-card">
+      <div class="spotlight"></div>
+      <div class="video-thumb-wrap-sm"><img src="https://img.youtube.com/vi/9tBnJKK55w0/maxresdefault.jpg" alt=""><div class="video-play-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="video-card-body-sm"><div class="podcast-ep">YouTube</div><div class="podcast-ep-title">Transamazônica: Parte 2</div></div>
+    </a>
+    <a href="https://www.youtube.com/watch?v=VrvHnjhyKxQ" target="_blank" class="video-card-sm glass-card">
+      <div class="spotlight"></div>
+      <div class="video-thumb-wrap-sm"><img src="https://img.youtube.com/vi/VrvHnjhyKxQ/maxresdefault.jpg" alt=""><div class="video-play-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="video-card-body-sm"><div class="podcast-ep">YouTube</div><div class="podcast-ep-title">Transamazônica: Parte 3</div></div>
+    </a>
+  </div>
+</div>
+
+<div class="reveal" style="margin-top:2rem">
+  <div class="participants-label">// Participantes da expedição</div>
+  <div class="participants-grid">
+    <div class="participant-chip"><div class="chip-avatar"><img src="assets/asset-Renato.png" onerror="this.parentNode.innerHTML='RC'" alt="Renato Cariani"></div><div class="chip-name">Renato Cariani</div></div>
+    <div class="participant-chip"><div class="chip-avatar"><img src="assets/asset-Júlio.png" onerror="this.parentNode.innerHTML='JB'" alt="Júlio Balestrin"></div><div class="chip-name">Júlio Balestrin</div></div>
+    <div class="participant-chip"><div class="chip-avatar"><img src="assets/asset-Ricardinho.png" onerror="this.parentNode.innerHTML='RF'" alt="Ricardinho ACF"></div><div class="chip-name">Ricardinho ACF</div></div>
+    <div class="participant-chip"><div class="chip-avatar"><img src="assets/asset-Gordox.png" onerror="this.parentNode.innerHTML='GX'" alt="Gordox"></div><div class="chip-name">Gordox</div></div>
+    <div class="participant-chip"><div class="chip-avatar"><img src="assets/asset-Rato.png" onerror="this.parentNode.innerHTML='RT'" alt="Rato"></div><div class="chip-name">Rato</div></div>
+    <div class="participant-chip"><div class="chip-avatar"><img src="assets/asset-Tonimek.png" onerror="this.parentNode.innerHTML='TM'" alt="Tonimek"></div><div class="chip-name">Tonimek</div></div>
+    <div class="participant-chip"><div class="chip-avatar"><img src="assets/Asset-Richard-ProfilePePalmado.png" onerror="this.parentNode.innerHTML='PP'" alt="Pé Palmado"></div><div class="chip-name">Pé Palmado</div></div>
+  </div>
+</div>
+</section>
+
+<!-- ALCANCE DRAWER -->
+<div id="alcanceDrawer" class="drawer-overlay">
+  <div class="drawer-panel">
+    <div class="drawer-head">
+      <div class="drawer-title">Decomposição do Alcance</div>
+      <button class="drawer-close" onclick="closeDrawer()"><i data-lucide="x"></i></button>
+    </div>
+    <div class="drawer-sub">47,6 milhões de pessoas/mês · dados orgânicos</div>
+    <div class="drawer-bars">
+      <div class="drawer-bar-row">
+        <div class="drawer-bar-lbl">YouTube</div>
+        <div class="drawer-bar-track"><div class="drawer-bar-fill" style="width:0" data-w="70" style="background:linear-gradient(90deg,#FF3333,#FF6B6B)"></div></div>
+        <div class="drawer-bar-pct">70%</div>
+      </div>
+      <div class="drawer-bar-row">
+        <div class="drawer-bar-lbl">Instagram</div>
+        <div class="drawer-bar-track"><div class="drawer-bar-fill" style="width:0" data-w="30" style="background:linear-gradient(90deg,#E1306C,#F3A50A)"></div></div>
+        <div class="drawer-bar-pct">30%</div>
+      </div>
+    </div>
+    <div class="drawer-note">Alcance calculado sobre impressões únicas mensais combinadas entre plataformas.</div>
+  </div>
+</div>
+
+<!-- EXPEDIÇÕES -->
+<section id="expeditions" class="section-parallax">
+<div class="reveal">
+  <div class="section-label">Conteúdo & Eventos</div>
+  <h2>Expedições & Eventos</h2>
+  <p class="sub">Viagem com Richard · experiências exclusivas</p>
+</div>
+<div class="exp-grid">
+  <div class="exp-card reveal reveal-delay-1">
+    <div class="exp-image"><img src="assets/01. Pais e Filhos - Banner.webp" alt="Festa Pais e Filhos" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-info"><div class="exp-title">Festa Pais e Filhos</div><div class="exp-desc">Traga sua família para passar um dia de fã com Richard Rasmussen!</div><a href="https://www.richardrasmussen.com.br/eventos/festa-pais-e-filhos" target="_blank" class="btn-comprar">Comprar</a></div>
+  </div>
+  <div class="exp-card reveal reveal-delay-2">
+    <div class="exp-image"><img src="assets/04. Expedição Amazônia - Desktop.webp" alt="Expedição Amazônia" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-info"><div class="exp-title">Expedição Amazônia</div><div class="exp-desc">Uma Jornada Inesquecível de 3 dias pela Amazônia com Richard Rasmussen.</div><a href="https://www.richardrasmussen.com.br/eventos/expedicao-amazonia" target="_blank" class="btn-comprar">Comprar</a></div>
+  </div>
+  <div class="exp-card reveal reveal-delay-3">
+    <div class="exp-image"><img src="assets/03. Expedição Pantanal Norte - Desktop.webp" alt="Pantanal Norte" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-info"><div class="exp-title">Expedição Pantanal Norte</div><div class="exp-desc">Viva o Pantanal Norte de forma verdadeira, ao lado de quem conhece cada detalhe.</div><a href="https://www.richardrasmussen.com.br/eventos/expedicao-pantanal-norte" target="_blank" class="btn-comprar">Comprar</a></div>
+  </div>
+  <div class="exp-card reveal reveal-delay-1">
+    <div class="exp-image"><img src="assets/02. Expedição Africa - Banner 2 - Desktop.webp" alt="Expedição África" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-info"><div class="exp-title">Expedição África</div><div class="exp-desc">Uma jornada selvagem inesquecível pela África do Sul com Richard Rasmussen!</div><a href="https://www.richardrasmussen.com.br/eventos/expedicao-africa" target="_blank" class="btn-comprar">Comprar</a></div>
+  </div>
+  <div class="exp-card reveal reveal-delay-2">
+    <div class="exp-image"><img src="assets/05. EXPEDIÇÃO AMAZÔNIA Edição Exclusiva para Estudantes - Desktop.webp" alt="Expedição Amazônia com Rodrigo Hidalgo" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-info"><div class="exp-title">Expedição Amazônia com Rodrigo Hidalgo</div><div class="exp-desc">Edição exclusiva para estudantes. Uma jornada feita para quem quer conhecimento real.</div><a href="https://www.richardrasmussen.com.br/eventos/expedicao-amazonia-com-rodrigo-hidalgo" target="_blank" class="btn-comprar">Comprar</a></div>
+  </div>
+  <div class="exp-card reveal reveal-delay-3">
+    <div class="exp-image"><img src="assets/06. Palestras - Desktop 1.png" alt="Palestras" class="no-zoom" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-info"><div class="exp-title">Palestras</div><div class="exp-desc">Para agro, turismo, corporativo, pet e conservação — adaptadas ao seu evento.</div><a href="https://www.richardrasmussen.com.br/eventos/palestras" target="_blank" class="btn-comprar">Comprar</a></div>
+  </div>
+  <div class="exp-card reveal reveal-delay-1">
+    <div class="exp-image"><img src="assets/07. Pantanal Sul - ROTEIRO 1 — BICHOS E GENTE - Desktop.webp" alt="Pantanal Sul" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-info"><div class="exp-title">Expedição Pantanal Sul: Bichos e Gente</div><div class="exp-desc">Uma aventura exclusiva de 4 dias e 3 noites no coração do Pantanal.</div><a href="https://www.richardrasmussen.com.br/eventos/expedicao-pantanal-sul-bichos-e-gente" target="_blank" class="btn-comprar">Comprar</a></div>
+  </div>
+</div>
+</section>
+
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-eyebrow reveal">Parcerias Estratégicas · São Paulo, SP</div>
+  <h2 class="cta-h reveal reveal-delay-1">Sua marca na maior<br>vitrine orgânica de natureza do <em>Brasil.</em></h2>
+  <p class="cta-sub reveal reveal-delay-2">20,1 milhões de seguidores. Audiência qualificada. Conteúdo que engaja de verdade.</p>
+  <div class="reveal reveal-delay-3">
+    <a href="https://wa.me/5511943346332" class="btn-cta-lg" target="_blank">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span>Agendar Campanha Estratégica</span>
+    </a>
+  </div>
+  <div class="cta-info reveal reveal-delay-4">
+    <a href="mailto:contato@richardrasmussen.com.br">contato@richardrasmussen.com.br</a>
+    <span class="cta-sep">|</span><span>+55 (11) 94334-6332</span>
+    <span class="cta-sep">|</span><span>São Paulo, SP</span>
+  </div>
+</section>
+
+<script>
+const revealEls = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      e.target.querySelectorAll('[data-w]').forEach(bar => {
+        const w = bar.dataset.w;
+        if (w) setTimeout(() => bar.style.width = w + '%', 250);
+      });
+      // Donut segments
+      e.target.querySelectorAll('.donut-seg[data-dash]').forEach((seg, i) => {
+        setTimeout(() => {
+          seg.setAttribute('stroke-dasharray', seg.dataset.dash);
+          if (seg.dataset.offset) {
+            seg.setAttribute('stroke-dashoffset', seg.dataset.offset);
+          }
+        }, 200 + i * 80);
+      });
+    }
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => obs.observe(el));
+
+// ─── PLATFORM TABS ───
+document.querySelectorAll('.plat-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.plat-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.plat-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    const panel = document.getElementById('panel-' + tab.dataset.plat);
+    if (panel) panel.classList.add('active');
+    // Re-init Lucide icons for newly visible panel
+    if (window.lucide) lucide.createIcons();
+  });
+});
+
+// ─── PERIOD SWITCHER ───
+document.querySelectorAll('.period-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const plat = btn.dataset.plat;
+    const period = btn.dataset.period;
+    document.querySelectorAll(`.period-btn[data-plat="${plat}"]`).forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    // Map plat to short key used in data attrs
+    const platKey = { instagram:'ig', tiktok:'tt', youtube:'yt' }[plat] || plat;
+    document.querySelectorAll(`#panel-${plat} .met-card-val[data-${platKey}-7d]`).forEach(el => {
+      const val = el.getAttribute(`data-${platKey}-${period}`);
+      if (val) el.textContent = val;
+    });
+  });
+});
+
+// ─── MAP HOTSPOT TOOLTIP ───
+(function(){
+  const mapTip = document.getElementById('mapTooltip');
+  if (!mapTip) return;
+
+  let countTimer = null;
+
+  function countUp(el, target, duration) {
+    if (countTimer) clearInterval(countTimer);
+    let start = 0;
+    const steps = 40;
+    const step = target / steps;
+    const interval = duration / steps;
+    countTimer = setInterval(() => {
+      start += step;
+      if (start >= target) { start = target; clearInterval(countTimer); }
+      el.textContent = Math.round(start) + '%';
+    }, interval);
+  }
+
+  document.querySelectorAll('.map-hotspot').forEach(spot => {
+    spot.addEventListener('mouseenter', e => {
+      const pct = parseInt(spot.dataset.pct);
+      mapTip.innerHTML =
+        '<div class="map-tooltip-region">' + spot.dataset.region + '</div>' +
+        '<span class="map-tooltip-pct">' + pct + '%</span>' +
+        '<div class="map-tooltip-sub">da audiência</div>';
+      mapTip.classList.add('visible');
+      positionTip(e);
+    });
+
+    spot.addEventListener('mousemove', positionTip);
+
+    spot.addEventListener('mouseleave', () => {
+      mapTip.classList.remove('visible');
+    });
+
+    // Count-up on click
+    spot.style.pointerEvents = 'all';
+    spot.addEventListener('click', () => {
+      const pct = parseInt(spot.dataset.pct);
+      const pctEl = mapTip.querySelector('.map-tooltip-pct');
+      if (pctEl) countUp(pctEl, pct, 600);
+    });
+  });
+
+  function positionTip(e) {
+    const wrap = mapTip.closest('.map-img-wrap') || mapTip.parentElement;
+    const r = wrap.getBoundingClientRect();
+    let x = e.clientX - r.left + 16;
+    let y = e.clientY - r.top - 80;
+    // Keep inside bounds
+    const tw = 140, th = 90;
+    if (x + tw > r.width) x = e.clientX - r.left - tw - 10;
+    if (y < 0) y = e.clientY - r.top + 16;
+    mapTip.style.left = x + 'px';
+    mapTip.style.top = y + 'px';
+  }
+})();
+
+// ─── PARALLAX SCROLL ───
+const heroImg = document.querySelector('.hero-img');
+const pageBg = document.getElementById('page-bg');
+
+window.addEventListener('scroll', () => {
+  const s = window.scrollY;
+
+  // Hero image: move up slowly
+  if (heroImg) {
+    heroImg.style.transform = 'scale(1) translateY(' + Math.min(s * 0.25, 100) + 'px)';
+  }
+
+  // Single page background: pan from top (0%) toward bottom at 0.7x scroll ratio
+  if (pageBg) {
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = maxScroll > 0 ? Math.min((s / maxScroll) * 100 * 0.7, 100) : 0;
+    pageBg.style.backgroundPositionY = pct + '%';
+  }
+}, { passive: true });
+
+// ─── SPOTLIGHT EFFECT ───
+document.querySelectorAll('.glass-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%';
+    const y = ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%';
+    card.style.setProperty('--mx', x);
+    card.style.setProperty('--my', y);
+  });
+});
+
+// ─── ROI COUNT-UP (scroll triggered) ───
+const roiObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.querySelectorAll('.roi-count').forEach(el => {
+      const target = parseFloat(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const isInt = el.dataset.integer === 'true';
+      const duration = 1600;
+      const start = performance.now();
+      function step(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        const val = target * ease;
+        const display = isInt ? Math.floor(val).toLocaleString('pt-BR') : val.toFixed(1).replace('.', ',');
+        el.textContent = display + suffix;
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = (isInt ? Math.floor(target).toLocaleString('pt-BR') : target.toFixed(1).replace('.', ',')) + suffix;
+      }
+      requestAnimationFrame(step);
+      roiObs.unobserve(e.target);
+    });
+  });
+}, { threshold: 0.3 });
+const amazonSection = document.getElementById('amazon');
+if (amazonSection) roiObs.observe(amazonSection);
+
+// ─── DRAWER ───
+function openDrawer(id) {
+  const overlay = document.getElementById(id + 'Drawer');
+  if (!overlay) return;
+  overlay.classList.add('open');
+  // Animate bars
+  setTimeout(() => {
+    overlay.querySelectorAll('.drawer-bar-fill[data-w]').forEach(bar => {
+      bar.style.width = bar.dataset.w + '%';
+    });
+  }, 400);
+  if (window.lucide) lucide.createIcons();
+}
+function closeDrawer() {
+  document.querySelectorAll('.drawer-overlay.open').forEach(d => d.classList.remove('open'));
+}
+document.querySelectorAll('.roi-interactive[data-drawer]').forEach(el => {
+  el.addEventListener('click', () => openDrawer(el.dataset.drawer));
+});
+document.querySelectorAll('.drawer-overlay').forEach(overlay => {
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeDrawer(); });
+});
+
+// ─── LUCIDE INIT ───
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.lucide) lucide.createIcons();
+});
+if (document.readyState !== 'loading' && window.lucide) lucide.createIcons();
+
+// ─── COUNT-UP (scroll-triggered, single system) ───
+function animateCount(el) {
+  const target = parseFloat(el.dataset.count);
+  const suffix = el.dataset.suffix || '';
+  const duration = 1600;
+  const isDecimal = String(el.dataset.count).includes('.');
+  const decimals = isDecimal ? (String(el.dataset.count).split('.')[1] || '').length : 0;
+  const start = performance.now();
+  function step(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const val = target * ease;
+    const display = isDecimal ? val.toFixed(decimals).replace('.', ',') : Math.floor(val);
+    el.textContent = display + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = (isDecimal ? target.toFixed(decimals).replace('.', ',') : target) + suffix;
+  }
+  requestAnimationFrame(step);
+}
+
+const countObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting && e.target.dataset.count) {
+      animateCount(e.target);
+      countObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.4 });
+document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
+
+const tooltip = document.getElementById('mapTooltip');
+// ─── LOGOS STRIP — continuous scroll, no pause ───
+
+// ─── BOTTOM NAV SCROLL SYNC ───
+const navSectionMap = [
+  { el: document.getElementById('hero'), key: 'hero' },
+  { el: document.getElementById('bio'), key: 'bio' },
+  { el: document.getElementById('social'), key: 'social' },
+  { el: document.getElementById('data'), key: 'data' },
+  { el: document.getElementById('expeditions'), key: 'expeditions' },
+  { el: document.getElementById('cta'), key: 'cta' },
+];
+window.addEventListener('scroll', () => {
+  const mid = window.scrollY + window.innerHeight / 2;
+  let current = 'hero';
+  navSectionMap.forEach(({ el, key }) => {
+    if (el && el.offsetTop <= mid) current = key;
+  });
+  document.querySelectorAll('.nav-item').forEach(n => {
+    n.classList.toggle('active', n.dataset.section === current);
+  });
+}, { passive: true });
+document.querySelectorAll('.nav-item').forEach(item => {
+  item.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.getElementById(item.dataset.section);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// ─── NETWORK TABS ───
+document.querySelectorAll('.net-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.net-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const net = tab.dataset.net;
+    document.querySelectorAll('.net-panel').forEach(p => {
+      p.classList.toggle('hidden', p.dataset.panel !== net);
+    });
+    // Re-trigger bar animations for visible panel
+    setTimeout(() => {
+      document.querySelectorAll('.net-panel:not(.hidden) [data-w]').forEach(bar => {
+        bar.style.width = '0';
+        setTimeout(() => bar.style.width = bar.dataset.w + '%', 50);
+      });
+    }, 50);
+  });
+});
+
+if (window.lucide) lucide.createIcons();
+</script>
+
+<!-- BOTTOM NAV -->
+<nav class="top-nav" id="topNav">
+  <a href="#hero" class="top-nav-logo">
+    <img src="assets/Asset-Richard-Logo.png" alt="Richard Rasmussen">
+  </a>
+  <div class="top-nav-links">
+    <a href="#bio" class="top-nav-link">Sobre</a>
+    <a href="#social" class="top-nav-link">Métricas</a>
+    <a href="#data" class="top-nav-link">Público</a>
+    <a href="#podcast" class="top-nav-link">Podcast</a>
+    <a href="#expeditions" class="top-nav-link">Expedições</a>
+    <a href="https://wa.me/5511943346332" class="top-nav-cta" target="_blank">Ser Parceiro</a>
+  </div>
+</nav>
+
+<nav class="bottom-nav">
+  <a class="nav-item active" data-section="hero" href="#hero">
+    <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span class="nav-label">Início</span>
+  </a>
+  <a class="nav-item" data-section="bio" href="#bio">
+    <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    <span class="nav-label">Sobre</span>
+  </a>
+  <a class="nav-item" data-section="social" href="#social">
+    <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    <span class="nav-label">Métricas</span>
+  </a>
+  <a class="nav-item" data-section="data" href="#data">
+    <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    <span class="nav-label">Público</span>
+  </a>
+  <a class="nav-item" data-section="expeditions" href="#expeditions">
+    <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+    <span class="nav-label">Expedições</span>
+  </a>
+  <a class="nav-item" data-section="cta" href="#cta">
+    <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <span class="nav-label">Contato</span>
+  </a>
+</nav>
+
+<!-- FLOATING LEAVES — mouse repel parallax -->
+<div id="leaves-layer" aria-hidden="true">
+  <img class="leaf" src="assets/Asset-Richard-FoilParalax5.png" style="top:3%;right:-7vw;width:clamp(260px,28vw,400px);transform:rotate(18deg)" data-depth="0.22">
+  <img class="leaf" src="assets/Asset-Richard-FoilParalax2.png" style="top:11%;left:-7vw;width:clamp(250px,26vw,384px);transform:rotate(-22deg)" data-depth="0.18">
+  <img class="leaf" src="assets/Asset-Richard-FoilParalax3.png" style="top:19%;right:-7vw;width:clamp(264px,28vw,404px);transform:rotate(30deg) scaleX(-1)" data-depth="0.24">
+  <img class="leaf" src="assets/Asset-Richard-FoilParalax4.png" style="top:27%;left:-7vw;width:clamp(256px,28vw,396px);transform:rotate(-15deg)" data-depth="0.20">
+  <img class="leaf" src="assets/Asset-Richard-FoilParalax6.png" style="top:36%;right:-7vw;width:clamp(260px,28vw,400px);transform:rotate(24deg)" data-depth="0.22">
+  <img class="leaf" src="assets/Asset-Richard-FoilParalax5.png" style="top:45%;left:-7vw;width:clamp(270px,30vw,416px);transform:rotate(-28deg) scaleX(-1)" data-depth="0.19">
+  <img class="leaf" src="assets/Asset-Richard-FoilParalax2.png" style="top:54%;right:-7vw;width:clamp(256px,28vw,390px);transform:rotate(16deg)" data-depth="0.23">
+  <img class="leaf" src="assets/Asset-Richard-FoilParalax3.png" style="top:63%;left:-7vw;width:clamp(260px,28vw,400px);transform:rotate(-20deg)" data-depth="0.20">
+  <img class="leaf" src="assets/Asset-Richard-FoilParalax4.png" style="top:72%;right:-7vw;width:clamp(264px,28vw,404px);transform:rotate(32deg) scaleX(-1)" data-depth="0.24">
+  <img class="leaf" src="assets/Asset-Richard-FoilParalax6.png" style="top:81%;left:-7vw;width:clamp(256px,28vw,392px);transform:rotate(-12deg)" data-depth="0.18">
+  <img class="leaf" src="assets/Asset-Richard-FoilParalax5.png" style="top:90%;right:-7vw;width:clamp(270px,30vw,416px);transform:rotate(22deg)" data-depth="0.21">
+  <img class="leaf" src="assets/Asset-Richard-FoilParalax2.png" style="top:97%;left:-7vw;width:clamp(260px,28vw,400px);transform:rotate(-26deg) scaleX(-1)" data-depth="0.19">
+</div>
+
+<style>
+/* Full-page parallax background */
+#page-bg{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background-image:url('assets/asset-fundo.png');
+  background-size:cover;
+  background-position:center 0%;
+  opacity:.45;
+  pointer-events:none;
+  will-change:background-position;
+}
+/* Leaves: absolute, spread across full page height */
+#leaves-layer{
+  position:absolute;
+  top:0;left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:9998;
+  overflow:hidden;
+}
+body{position:relative}
+.leaf{
+  position:absolute;
+  opacity:1;
+  will-change:transform;
+  pointer-events:none;
+  filter:drop-shadow(0 8px 28px rgba(0,0,0,.4));
+}
+@media(max-width:600px){.leaf{opacity:.9;width:clamp(60px,14vw,100px)!important;right:-14vw!important;left:-14vw!important}}
+</style>
+
+<script>
+(function(){
+  const leaves = document.querySelectorAll('.leaf');
+  const baseTransforms = Array.from(leaves).map(l => l.style.transform || '');
+  const depths = Array.from(leaves).map(l => parseFloat(l.dataset.depth || '0.05'));
+
+  const REPEL_RADIUS = 280;
+  const REPEL_STRENGTH = 80;
+  const LERP = 0.06;
+
+  let mouseX = -9999, mouseY = -9999;
+  let scrollY = window.scrollY;
+  const cur = Array.from(leaves).map(() => ({ tx: 0, ty: 0, sy: 0 }));
+
+  document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
+  document.addEventListener('mouseleave', () => { mouseX = -9999; mouseY = -9999; });
+  window.addEventListener('scroll', () => { scrollY = window.scrollY; }, { passive: true });
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function tick() {
+    leaves.forEach((leaf, i) => {
+      const rect = leaf.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+
+      // Mouse repel — only when leaf is in viewport
+      let targetTx = 0, targetTy = 0;
+      if (cy > -200 && cy < window.innerHeight + 200) {
+        const dx = cx - mouseX;
+        const dy = cy - mouseY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < REPEL_RADIUS && dist > 0) {
+          const force = (1 - dist / REPEL_RADIUS) * REPEL_STRENGTH;
+          targetTx = (dx / dist) * force;
+          targetTy = (dy / dist) * force;
+        }
+      }
+
+      // Subtle parallax: leaf drifts slightly faster than page (depth = extra upward drift)
+      const targetSy = -(scrollY * depths[i]);
+
+      cur[i].tx = lerp(cur[i].tx, targetTx, LERP);
+      cur[i].ty = lerp(cur[i].ty, targetTy, LERP);
+      cur[i].sy = lerp(cur[i].sy, targetSy, LERP * 2);
+
+      leaf.style.transform = baseTransforms[i] + ` translate(${cur[i].tx}px,${cur[i].ty + cur[i].sy}px)`;
+    });
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+
+
+// ── TOP NAV SCROLL EFFECT ──
+const topNav = document.getElementById('topNav');
+if(topNav){
+  window.addEventListener('scroll', () => {
+    topNav.classList.toggle('scrolled', window.scrollY > 60);
+  }, {passive:true});
+}
+
+</script>
+
+</body></html>
