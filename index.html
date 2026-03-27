@@ -6,6 +6,8 @@
 <title>Richard Rasmussen · Parcerias Estratégicas</title>
 <link rel="icon" type="image/png" href="assets/Iconografia - Richard Yellow.png">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <style>
 :root {
@@ -50,11 +52,11 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 /* placeholder label */
 .hero-bg-image .ph-label{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--sans);font-weight:300;font-size:.6rem;letter-spacing:.22em;color:rgba(255,255,255,.1);text-transform:uppercase;text-align:center;white-space:nowrap;z-index:1;pointer-events:none}
 .hero-text-block{position:relative;z-index:2;padding:0 var(--pad);text-align:center;display:flex;flex-direction:column;align-items:center;opacity:0;transform:translateY(24px);animation:fadeUp .85s ease forwards .25s;width:100%;max-width:800px}
-@media(min-width:768px){#hero{align-items:flex-start;justify-content:center;padding-left:var(--pad);padding-right:var(--pad)}.hero-text-block{text-align:left;align-items:flex-start;max-width:560px}}.hero-stats{display:flex;gap:clamp(16px,4vw,40px);margin-bottom:2rem;flex-wrap:wrap;justify-content:center}
+@media(min-width:768px){#hero{align-items:flex-start;justify-content:center;padding-left:var(--pad);padding-right:var(--pad)}.hero-text-block{text-align:left;align-items:flex-start;max-width:560px}}
 /* hide old mobile/desktop image elements */
 .hero-image-mobile{display:none}
 .hero-desktop-right{display:none}
-.richard-logo{margin-bottom:1.5rem;display:flex;flex-direction:column;align-items:center}
+.richard-logo{margin-bottom:1.5rem;display:flex;flex-direction:column;align-items:center;text-decoration:none}
 .logo-img{width:clamp(140px,22vw,220px);object-fit:contain}
 .hero-headline{font-size:clamp(1.6rem,4.5vw,2.6rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;max-width:600px;margin-bottom:.9rem;color:var(--text)}
 .hero-headline em{font-style:normal;background:linear-gradient(135deg,#F1770B,#F3A50A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -373,11 +375,9 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   text-transform:uppercase;
   margin-top:.2rem;
 }
-.map-legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:1.5rem;justify-content:center}
+.map-legend{display:flex;flex-direction:column;gap:12px;flex-wrap:wrap;margin-top:1.5rem;justify-content:center}
 @media(min-width:700px){.map-legend{justify-content:flex-start;margin-top:0}}
 .map-legend-col{display:flex;flex-direction:column;gap:16px;justify-content:center}
-.legend-item{display:flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:400;font-size:1rem;letter-spacing:.04em;color:rgba(240,237,232,.85)}
-.legend-dot{width:14px;height:14px;border-radius:50%;background:var(--primary);flex-shrink:0}
 
 /* Row 2: unified demographic card */
 .demo-card{
@@ -614,9 +614,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .eco-icons{display:flex;gap:10px;padding:1rem 1.25rem .5rem;opacity:.45;position:relative;z-index:2}
 .eco-icons i{width:16px;height:16px;color:var(--accent)}
 
-/* ROI interactive hover */
-.roi-interactive{cursor:pointer;transition:background .25s,border-color .25s,box-shadow .25s}
-.roi-interactive:hover{background:rgba(243,165,10,.08);border-color:rgba(243,165,10,.3);box-shadow:0 0 20px rgba(243,165,10,.1)}
 .roi-n{font-size:1.35rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:4px;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
 
 /* DRAWER */
@@ -866,9 +863,9 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   </picture>
 </div>
 <div class="hero-text-block">
-  <div class="richard-logo">
+  <a href="https://www.richardrasmussen.com.br/" class="richard-logo">
     <img src="assets/Asset-Richard-Logo.png" class="logo-img" alt="Richard Rasmussen">
-  </div>
+  </a>
   <h1 class="hero-headline">O maior alcance orgânico<br>do nicho de <em>natureza no Brasil.</em></h1>
   <p class="hero-tagline">Biólogo, aventureiro e jornalista.<br>20 anos levando a natureza às telas do país.</p>
   <div class="hero-stats">
@@ -876,7 +873,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     <div class="hero-stat"><div class="num" data-count="47.6" data-suffix="Mi">47,6Mi</div><div class="lbl">Alcance/mês Reels</div></div>
     <div class="hero-stat"><div class="num" data-count="6.73" data-suffix="Mi">6,73Mi</div><div class="lbl">Inscritos YouTube</div></div>
   </div>
-  <a href="https://wa.me/5511943346332" class="btn-cta" target="_blank">
+  <a href="https://wa.me/5511941909767" class="btn-cta" target="_blank">
     <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     <span>Quero ser parceiro</span>
   </a>
@@ -1112,7 +1109,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 <section id="bio" class="section-parallax">
 <div class="bio-grid">
   <div class="bio-photo-wrap reveal">
-    <img src="assets/Asset-Richard-Quem-é.png" style="width:100%;height:auto;object-fit:contain;display:block" alt="Richard Rasmussen">
+    <img src="assets/Asset-Richard-Quem-é.png" loading="lazy" decoding="async" style="width:100%;height:auto;object-fit:contain;display:block" alt="Richard Rasmussen">
   </div>
   <div class="bio-content reveal reveal-delay-2">
     <div class="section-label">Quem é</div>
@@ -1151,7 +1148,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   <div class="map-inner">
     <div class="map-img-wrap">
       <div class="map-tooltip" id="mapTooltip"></div>
-      <img src="assets/Asset-Richard-Distribuição-geográfica.png" class="brazil-map-img" alt="Distribuição geográfica Brasil">
+      <img src="assets/Asset-Richard-Distribuição-geográfica.png" loading="lazy" decoding="async" class="brazil-map-img" alt="Distribuição geográfica Brasil">
       <!-- Hotspots — transparentes sobre o asset -->
       <div class="map-hotspot" style="top:22%;left:30%" data-region="Norte" data-pct="10%"></div>
       <div class="map-hotspot" style="top:28%;left:68%" data-region="Nordeste" data-pct="15%"></div>
@@ -1328,7 +1325,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     </div>
   </div>
   <div class="section-image-block reveal reveal-delay-2">
-    <img src="assets/Asset-Richard-Recebe.png" onerror="this.style.display='none'" alt="Richard Recebe">
+    <img src="assets/Asset-Richard-Recebe.png" loading="lazy" decoding="async" onerror="this.style.display='none'" alt="Richard Recebe">
   </div>
 </div>
 
@@ -1337,7 +1334,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   <a href="https://www.youtube.com/watch?v=vpO5eZ_Yzjs" target="_blank" class="video-card-lg glass-card">
     <div class="spotlight"></div>
     <div class="video-thumb-wrap">
-      <img src="https://img.youtube.com/vi/vpO5eZ_Yzjs/maxresdefault.jpg" alt="Richard Recebe" onerror="this.style.background='rgba(55,52,53,.5)'">
+      <img loading="lazy" decoding="async" src="https://img.youtube.com/vi/vpO5eZ_Yzjs/maxresdefault.jpg" alt="Richard Recebe" onerror="this.style.background='rgba(55,52,53,.5)'">
       <div class="video-play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
     </div>
     <div class="video-card-body">
@@ -1350,7 +1347,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     <a href="https://www.youtube.com/watch?v=h2hZxPhE5rA" target="_blank" class="video-card-sm glass-card">
       <div class="spotlight"></div>
       <div class="video-thumb-wrap-sm">
-        <img src="https://img.youtube.com/vi/h2hZxPhE5rA/maxresdefault.jpg" alt="">
+        <img loading="lazy" decoding="async" src="https://img.youtube.com/vi/h2hZxPhE5rA/maxresdefault.jpg" alt="">
         <div class="video-play-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
       <div class="video-card-body-sm"><div class="podcast-ep">#0037</div><div class="podcast-ep-title">Rodrigo Pantera: Sobrevivência e Tática</div></div>
@@ -1358,7 +1355,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     <a href="https://www.youtube.com/watch?v=qTvZMANjYqk" target="_blank" class="video-card-sm glass-card">
       <div class="spotlight"></div>
       <div class="video-thumb-wrap-sm">
-        <img src="https://img.youtube.com/vi/qTvZMANjYqk/maxresdefault.jpg" alt="">
+        <img loading="lazy" decoding="async" src="https://img.youtube.com/vi/qTvZMANjYqk/maxresdefault.jpg" alt="">
         <div class="video-play-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
       <div class="video-card-body-sm"><div class="podcast-ep">#0041</div><div class="podcast-ep-title">Episódio especial</div></div>
@@ -1366,7 +1363,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     <a href="https://www.youtube.com/watch?v=4chGCmntFnU" target="_blank" class="video-card-sm glass-card">
       <div class="spotlight"></div>
       <div class="video-thumb-wrap-sm">
-        <img src="https://img.youtube.com/vi/4chGCmntFnU/maxresdefault.jpg" alt="">
+        <img loading="lazy" decoding="async" src="https://img.youtube.com/vi/4chGCmntFnU/maxresdefault.jpg" alt="">
         <div class="video-play-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
       <div class="video-card-body-sm"><div class="podcast-ep">#0040</div><div class="podcast-ep-title">Episódio especial</div></div>
@@ -1408,7 +1405,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   </div>
   </div><!-- end text-wrap -->
   <div class="section-image-block reveal reveal-delay-2">
-    <img src="assets/Asset-Richard-Transamazônica2026.png" onerror="this.style.display='none'" alt="Transamazônica">
+    <img src="assets/Asset-Richard-Transamazônica2026.png" loading="lazy" decoding="async" onerror="this.style.display='none'" alt="Transamazônica">
   </div>
 </div>
 
@@ -1417,7 +1414,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   <a href="https://www.youtube.com/watch?v=cJxChLTwRl0" target="_blank" class="video-card-lg glass-card">
     <div class="spotlight"></div>
     <div class="video-thumb-wrap">
-      <img src="https://img.youtube.com/vi/cJxChLTwRl0/maxresdefault.jpg" alt="Transamazônica">
+      <img loading="lazy" decoding="async" src="https://img.youtube.com/vi/cJxChLTwRl0/maxresdefault.jpg" alt="Transamazônica">
       <div class="video-play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
     </div>
     <div class="video-card-body">
@@ -1428,17 +1425,17 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   <div class="video-row-sm">
     <a href="https://www.youtube.com/watch?v=raZY4zKTw1A" target="_blank" class="video-card-sm glass-card">
       <div class="spotlight"></div>
-      <div class="video-thumb-wrap-sm"><img src="https://img.youtube.com/vi/raZY4zKTw1A/maxresdefault.jpg" alt=""><div class="video-play-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="video-thumb-wrap-sm"><img loading="lazy" decoding="async" src="https://img.youtube.com/vi/raZY4zKTw1A/maxresdefault.jpg" alt=""><div class="video-play-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div></div>
       <div class="video-card-body-sm"><div class="podcast-ep">YouTube</div><div class="podcast-ep-title">Transamazônica: Parte 1</div></div>
     </a>
     <a href="https://www.youtube.com/watch?v=9tBnJKK55w0" target="_blank" class="video-card-sm glass-card">
       <div class="spotlight"></div>
-      <div class="video-thumb-wrap-sm"><img src="https://img.youtube.com/vi/9tBnJKK55w0/maxresdefault.jpg" alt=""><div class="video-play-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="video-thumb-wrap-sm"><img loading="lazy" decoding="async" src="https://img.youtube.com/vi/9tBnJKK55w0/maxresdefault.jpg" alt=""><div class="video-play-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div></div>
       <div class="video-card-body-sm"><div class="podcast-ep">YouTube</div><div class="podcast-ep-title">Transamazônica: Parte 2</div></div>
     </a>
     <a href="https://www.youtube.com/watch?v=VrvHnjhyKxQ" target="_blank" class="video-card-sm glass-card">
       <div class="spotlight"></div>
-      <div class="video-thumb-wrap-sm"><img src="https://img.youtube.com/vi/VrvHnjhyKxQ/maxresdefault.jpg" alt=""><div class="video-play-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <div class="video-thumb-wrap-sm"><img loading="lazy" decoding="async" src="https://img.youtube.com/vi/VrvHnjhyKxQ/maxresdefault.jpg" alt=""><div class="video-play-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div></div>
       <div class="video-card-body-sm"><div class="podcast-ep">YouTube</div><div class="podcast-ep-title">Transamazônica: Parte 3</div></div>
     </a>
   </div>
@@ -1479,31 +1476,31 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 </div>
 <div class="exp-grid">
   <div class="exp-card reveal reveal-delay-1">
-    <div class="exp-image"><img src="assets/01. Pais e Filhos - Banner.webp" alt="Festa Pais e Filhos" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-image"><img loading="lazy" decoding="async" src="assets/01. Pais e Filhos - Banner.webp" alt="Festa Pais e Filhos" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
     <div class="exp-info"><div class="exp-title">Festa Pais e Filhos</div><div class="exp-desc">Traga sua família para passar um dia de fã com Richard Rasmussen!</div><a href="https://www.richardrasmussen.com.br/eventos/festa-pais-e-filhos" target="_blank" class="btn-comprar">Comprar</a></div>
   </div>
   <div class="exp-card reveal reveal-delay-2">
-    <div class="exp-image"><img src="assets/04. Expedição Amazônia - Desktop.webp" alt="Expedição Amazônia" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-image"><img loading="lazy" decoding="async" src="assets/04. Expedição Amazônia - Desktop.webp" alt="Expedição Amazônia" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
     <div class="exp-info"><div class="exp-title">Expedição Amazônia</div><div class="exp-desc">Uma Jornada Inesquecível de 3 dias pela Amazônia com Richard Rasmussen.</div><a href="https://www.richardrasmussen.com.br/eventos/expedicao-amazonia" target="_blank" class="btn-comprar">Comprar</a></div>
   </div>
   <div class="exp-card reveal reveal-delay-3">
-    <div class="exp-image"><img src="assets/03. Expedição Pantanal Norte - Desktop.webp" alt="Pantanal Norte" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-image"><img loading="lazy" decoding="async" src="assets/03. Expedição Pantanal Norte - Desktop.webp" alt="Pantanal Norte" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
     <div class="exp-info"><div class="exp-title">Expedição Pantanal Norte</div><div class="exp-desc">Viva o Pantanal Norte de forma verdadeira, ao lado de quem conhece cada detalhe.</div><a href="https://www.richardrasmussen.com.br/eventos/expedicao-pantanal-norte" target="_blank" class="btn-comprar">Comprar</a></div>
   </div>
   <div class="exp-card reveal reveal-delay-1">
-    <div class="exp-image"><img src="assets/02. Expedição Africa - Banner 2 - Desktop.webp" alt="Expedição África" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-image"><img loading="lazy" decoding="async" src="assets/02. Expedição Africa - Banner 2 - Desktop.webp" alt="Expedição África" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
     <div class="exp-info"><div class="exp-title">Expedição África</div><div class="exp-desc">Uma jornada selvagem inesquecível pela África do Sul com Richard Rasmussen!</div><a href="https://www.richardrasmussen.com.br/eventos/expedicao-africa" target="_blank" class="btn-comprar">Comprar</a></div>
   </div>
   <div class="exp-card reveal reveal-delay-2">
-    <div class="exp-image"><img src="assets/05. EXPEDIÇÃO AMAZÔNIA Edição Exclusiva para Estudantes - Desktop.webp" alt="Expedição Amazônia com Rodrigo Hidalgo" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-image"><img loading="lazy" decoding="async" src="assets/05. EXPEDIÇÃO AMAZÔNIA Edição Exclusiva para Estudantes - Desktop.webp" alt="Expedição Amazônia com Rodrigo Hidalgo" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
     <div class="exp-info"><div class="exp-title">Expedição Amazônia com Rodrigo Hidalgo</div><div class="exp-desc">Edição exclusiva para estudantes. Uma jornada feita para quem quer conhecimento real.</div><a href="https://www.richardrasmussen.com.br/eventos/expedicao-amazonia-com-rodrigo-hidalgo" target="_blank" class="btn-comprar">Comprar</a></div>
   </div>
   <div class="exp-card reveal reveal-delay-3">
-    <div class="exp-image"><img src="assets/06. Palestras - Desktop 1.png" alt="Palestras" class="no-zoom" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-image"><img loading="lazy" decoding="async" src="assets/06. Palestras - Desktop 1.png" alt="Palestras" class="no-zoom" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
     <div class="exp-info"><div class="exp-title">Palestras</div><div class="exp-desc">Para agro, turismo, corporativo, pet e conservação — adaptadas ao seu evento.</div><a href="https://www.richardrasmussen.com.br/eventos/palestras" target="_blank" class="btn-comprar">Comprar</a></div>
   </div>
   <div class="exp-card reveal reveal-delay-1">
-    <div class="exp-image"><img src="assets/07. Pantanal Sul - ROTEIRO 1 — BICHOS E GENTE - Desktop.webp" alt="Pantanal Sul" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-image"><img loading="lazy" decoding="async" src="assets/07. Pantanal Sul - ROTEIRO 1 — BICHOS E GENTE - Desktop.webp" alt="Pantanal Sul" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
     <div class="exp-info"><div class="exp-title">Expedição Pantanal Sul: Bichos e Gente</div><div class="exp-desc">Uma aventura exclusiva de 4 dias e 3 noites no coração do Pantanal.</div><a href="https://www.richardrasmussen.com.br/eventos/expedicao-pantanal-sul-bichos-e-gente" target="_blank" class="btn-comprar">Comprar</a></div>
   </div>
 </div>
@@ -1516,14 +1513,14 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   <h2 class="cta-h reveal reveal-delay-1">Sua marca na maior<br>vitrine orgânica de natureza do <em>Brasil.</em></h2>
   <p class="cta-sub reveal reveal-delay-2">20,1 milhões de seguidores. Audiência qualificada. Conteúdo que engaja de verdade.</p>
   <div class="reveal reveal-delay-3">
-    <a href="https://wa.me/5511943346332" class="btn-cta-lg" target="_blank">
+    <a href="https://wa.me/5511941909767" class="btn-cta-lg" target="_blank">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       <span>Agendar Campanha Estratégica</span>
     </a>
   </div>
   <div class="cta-info reveal reveal-delay-4">
     <a href="mailto:contato@richardrasmussen.com.br">contato@richardrasmussen.com.br</a>
-    <span class="cta-sep">|</span><span>+55 (11) 94334-6332</span>
+    <span class="cta-sep">|</span><span>+55 (11) 94190-9767</span>
     <span class="cta-sep">|</span><span>São Paulo, SP</span>
   </div>
 </section>
@@ -1641,23 +1638,54 @@ document.querySelectorAll('.period-btn').forEach(btn => {
   }
 })();
 
-// ─── PARALLAX SCROLL ───
+// ─── UNIFIED SCROLL HANDLER ───
 const heroImg = document.querySelector('.hero-img');
 const pageBg = document.getElementById('page-bg');
+let _topNav = null, _navSections = null;
+let scrollTicking = false;
 
 window.addEventListener('scroll', () => {
-  const s = window.scrollY;
+  if (!scrollTicking) {
+    requestAnimationFrame(() => {
+      const s = window.scrollY;
 
-  // Hero image: move up slowly
-  if (heroImg) {
-    heroImg.style.transform = 'scale(1) translateY(' + Math.min(s * 0.25, 100) + 'px)';
-  }
+      // Hero image parallax
+      if (heroImg) {
+        heroImg.style.transform = 'scale(1) translateY(' + Math.min(s * 0.25, 100) + 'px)';
+      }
 
-  // Single page background: pan from top (0%) toward bottom at 0.7x scroll ratio
-  if (pageBg) {
-    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = maxScroll > 0 ? Math.min((s / maxScroll) * 100 * 0.7, 100) : 0;
-    pageBg.style.backgroundPositionY = pct + '%';
+      // Page background pan
+      if (pageBg) {
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = maxScroll > 0 ? Math.min((s / maxScroll) * 100 * 0.7, 100) : 0;
+        pageBg.style.backgroundPositionY = pct + '%';
+      }
+
+      // Bottom nav active section (lazy-init refs after DOM ready)
+      if (!_navSections) _navSections = [
+        { el: document.getElementById('hero'), key: 'hero' },
+        { el: document.getElementById('bio'), key: 'bio' },
+        { el: document.getElementById('social'), key: 'social' },
+        { el: document.getElementById('data'), key: 'data' },
+        { el: document.getElementById('expeditions'), key: 'expeditions' },
+        { el: document.getElementById('cta'), key: 'cta' },
+      ];
+      const mid = s + window.innerHeight / 2;
+      let current = 'hero';
+      _navSections.forEach(({ el, key }) => {
+        if (el && el.offsetTop <= mid) current = key;
+      });
+      document.querySelectorAll('.nav-item').forEach(n => {
+        n.classList.toggle('active', n.dataset.section === current);
+      });
+
+      // Top nav scroll effect (lazy-init)
+      if (!_topNav) _topNav = document.getElementById('topNav');
+      if (_topNav) _topNav.classList.toggle('scrolled', s > 60);
+
+      scrollTicking = false;
+    });
+    scrollTicking = true;
   }
 }, { passive: true });
 
@@ -1758,28 +1786,7 @@ const countObs = new IntersectionObserver(entries => {
 }, { threshold: 0.4 });
 document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
 
-const tooltip = document.getElementById('mapTooltip');
 // ─── LOGOS STRIP — continuous scroll, no pause ───
-
-// ─── BOTTOM NAV SCROLL SYNC ───
-const navSectionMap = [
-  { el: document.getElementById('hero'), key: 'hero' },
-  { el: document.getElementById('bio'), key: 'bio' },
-  { el: document.getElementById('social'), key: 'social' },
-  { el: document.getElementById('data'), key: 'data' },
-  { el: document.getElementById('expeditions'), key: 'expeditions' },
-  { el: document.getElementById('cta'), key: 'cta' },
-];
-window.addEventListener('scroll', () => {
-  const mid = window.scrollY + window.innerHeight / 2;
-  let current = 'hero';
-  navSectionMap.forEach(({ el, key }) => {
-    if (el && el.offsetTop <= mid) current = key;
-  });
-  document.querySelectorAll('.nav-item').forEach(n => {
-    n.classList.toggle('active', n.dataset.section === current);
-  });
-}, { passive: true });
 document.querySelectorAll('.nav-item').forEach(item => {
   item.addEventListener('click', (e) => {
     e.preventDefault();
@@ -1812,7 +1819,7 @@ if (window.lucide) lucide.createIcons();
 
 <!-- BOTTOM NAV -->
 <nav class="top-nav" id="topNav">
-  <a href="#hero" class="top-nav-logo">
+  <a href="https://www.richardrasmussen.com.br/" class="top-nav-logo">
     <img src="assets/Asset-Richard-Logo.png" alt="Richard Rasmussen">
   </a>
   <div class="top-nav-links">
@@ -1821,7 +1828,7 @@ if (window.lucide) lucide.createIcons();
     <a href="#data" class="top-nav-link">Público</a>
     <a href="#podcast" class="top-nav-link">Podcast</a>
     <a href="#expeditions" class="top-nav-link">Expedições</a>
-    <a href="https://wa.me/5511943346332" class="top-nav-cta" target="_blank">Ser Parceiro</a>
+    <a href="https://wa.me/5511941909767" class="top-nav-cta" target="_blank">Ser Parceiro</a>
   </div>
 </nav>
 
@@ -1854,18 +1861,18 @@ if (window.lucide) lucide.createIcons();
 
 <!-- FLOATING LEAVES — mouse repel parallax -->
 <div id="leaves-layer" aria-hidden="true">
-  <img class="leaf" src="assets/Asset-Richard-FoilParalax5.png" style="top:3%;right:-7vw;width:clamp(260px,28vw,400px);transform:rotate(18deg)" data-depth="0.22">
-  <img class="leaf" src="assets/Asset-Richard-FoilParalax2.png" style="top:11%;left:-7vw;width:clamp(250px,26vw,384px);transform:rotate(-22deg)" data-depth="0.18">
-  <img class="leaf" src="assets/Asset-Richard-FoilParalax3.png" style="top:19%;right:-7vw;width:clamp(264px,28vw,404px);transform:rotate(30deg) scaleX(-1)" data-depth="0.24">
-  <img class="leaf" src="assets/Asset-Richard-FoilParalax4.png" style="top:27%;left:-7vw;width:clamp(256px,28vw,396px);transform:rotate(-15deg)" data-depth="0.20">
-  <img class="leaf" src="assets/Asset-Richard-FoilParalax6.png" style="top:36%;right:-7vw;width:clamp(260px,28vw,400px);transform:rotate(24deg)" data-depth="0.22">
-  <img class="leaf" src="assets/Asset-Richard-FoilParalax5.png" style="top:45%;left:-7vw;width:clamp(270px,30vw,416px);transform:rotate(-28deg) scaleX(-1)" data-depth="0.19">
-  <img class="leaf" src="assets/Asset-Richard-FoilParalax2.png" style="top:54%;right:-7vw;width:clamp(256px,28vw,390px);transform:rotate(16deg)" data-depth="0.23">
-  <img class="leaf" src="assets/Asset-Richard-FoilParalax3.png" style="top:63%;left:-7vw;width:clamp(260px,28vw,400px);transform:rotate(-20deg)" data-depth="0.20">
-  <img class="leaf" src="assets/Asset-Richard-FoilParalax4.png" style="top:72%;right:-7vw;width:clamp(264px,28vw,404px);transform:rotate(32deg) scaleX(-1)" data-depth="0.24">
-  <img class="leaf" src="assets/Asset-Richard-FoilParalax6.png" style="top:81%;left:-7vw;width:clamp(256px,28vw,392px);transform:rotate(-12deg)" data-depth="0.18">
-  <img class="leaf" src="assets/Asset-Richard-FoilParalax5.png" style="top:90%;right:-7vw;width:clamp(270px,30vw,416px);transform:rotate(22deg)" data-depth="0.21">
-  <img class="leaf" src="assets/Asset-Richard-FoilParalax2.png" style="top:97%;left:-7vw;width:clamp(260px,28vw,400px);transform:rotate(-26deg) scaleX(-1)" data-depth="0.19">
+  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax5.png" style="top:3%;right:-7vw;width:clamp(260px,28vw,400px);transform:rotate(18deg)" data-depth="0.22">
+  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax2.png" style="top:11%;left:-7vw;width:clamp(250px,26vw,384px);transform:rotate(-22deg)" data-depth="0.18">
+  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax3.png" style="top:19%;right:-7vw;width:clamp(264px,28vw,404px);transform:rotate(30deg) scaleX(-1)" data-depth="0.24">
+  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax4.png" style="top:27%;left:-7vw;width:clamp(256px,28vw,396px);transform:rotate(-15deg)" data-depth="0.20">
+  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax6.png" style="top:36%;right:-7vw;width:clamp(260px,28vw,400px);transform:rotate(24deg)" data-depth="0.22">
+  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax5.png" style="top:45%;left:-7vw;width:clamp(270px,30vw,416px);transform:rotate(-28deg) scaleX(-1)" data-depth="0.19">
+  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax2.png" style="top:54%;right:-7vw;width:clamp(256px,28vw,390px);transform:rotate(16deg)" data-depth="0.23">
+  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax3.png" style="top:63%;left:-7vw;width:clamp(260px,28vw,400px);transform:rotate(-20deg)" data-depth="0.20">
+  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax4.png" style="top:72%;right:-7vw;width:clamp(264px,28vw,404px);transform:rotate(32deg) scaleX(-1)" data-depth="0.24">
+  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax6.png" style="top:81%;left:-7vw;width:clamp(256px,28vw,392px);transform:rotate(-12deg)" data-depth="0.18">
+  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax5.png" style="top:90%;right:-7vw;width:clamp(270px,30vw,416px);transform:rotate(22deg)" data-depth="0.21">
+  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax2.png" style="top:97%;left:-7vw;width:clamp(260px,28vw,400px);transform:rotate(-26deg) scaleX(-1)" data-depth="0.19">
 </div>
 
 <style>
@@ -1956,13 +1963,6 @@ body{position:relative}
 })();
 
 
-// ── TOP NAV SCROLL EFFECT ──
-const topNav = document.getElementById('topNav');
-if(topNav){
-  window.addEventListener('scroll', () => {
-    topNav.classList.toggle('scrolled', window.scrollY > 60);
-  }, {passive:true});
-}
 
 </script>
 
