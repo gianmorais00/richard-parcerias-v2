@@ -5,10 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Richard Rasmussen · Parcerias Estratégicas</title>
 <link rel="icon" type="image/png" href="assets/Iconografia - Richard Yellow.png">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg:#000; --primary:#F1770B; --accent:#F3A50A;
@@ -784,6 +783,20 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   .top-nav-cta:hover{background:#e06a0a;transform:translateY(-1px)}
 }
 
+
+/* VOLTAR AO SITE (fixo, canto superior esquerdo) */
+.btn-voltar{position:fixed;top:max(12px,env(safe-area-inset-top));left:max(12px,env(safe-area-inset-left));z-index:1001;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:44px;min-height:44px;padding:0 14px 0 10px;border-radius:999px;background:rgba(0,0,0,.55);border:1px solid rgba(241,119,11,.45);color:var(--text);font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:border-color .2s,color .2s,background .2s}
+.btn-voltar svg{width:18px;height:18px;flex-shrink:0;color:var(--accent)}
+.btn-voltar:hover{border-color:var(--accent);color:var(--accent);background:rgba(0,0,0,.75)}
+.btn-voltar:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+/* abaixo de 1100px o menu do topo não tem folga: botão só com ícone (texto fica para leitor de tela) */
+@media(max-width:1099px){.btn-voltar{padding:0;width:44px}.btn-voltar span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+@media(min-width:768px){.btn-voltar{top:10px;left:clamp(16px,2vw,32px);background:rgba(0,0,0,.35)}.top-nav{padding-left:calc(clamp(16px,2vw,32px) + 56px)}}
+@media(min-width:1100px){.top-nav{padding-left:calc(clamp(16px,2vw,32px) + 168px)}}
+/* 768–899px: o menu ocupa a barra inteira; o botão fica logo abaixo dela e a barra não muda */
+@media(min-width:768px) and (max-width:899px){.btn-voltar{top:74px;background:rgba(0,0,0,.55)}.top-nav{padding-left:clamp(24px,4vw,60px)}}
+picture{display:contents} /* <picture> sem caixa própria: o layout segue tratando o <img> como filho direto */
+
 /* ═══════════════════════════════
    DESKTOP POLISH (≥768px)
 ═══════════════════════════════ */
@@ -846,32 +859,38 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   .hero-headline{max-width:520px}
   .hero-tagline{max-width:440px}
   .hero-stats{justify-content:flex-start}
-  .hero-bg-image img.hero-img{content:url('assets/Asset-Richard-Headerdesk.png');object-position:right center}
+  .hero-bg-image img.hero-img{object-position:right center}
   .hero-bg-image::after{background:linear-gradient(90deg,rgba(0,0,0,.75) 0%,rgba(0,0,0,.4) 50%,rgba(0,0,0,.05) 100%)}
 }
 </style>
 </head>
 <body>
 <div id="page-bg" aria-hidden="true"></div>
+<a href="https://www.richardrasmussen.com.br/" class="btn-voltar" aria-label="Voltar ao site do Richard Rasmussen">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+  <span>Voltar ao site</span>
+</a>
 
 <!-- HERO -->
 <section id="hero">
 <div class="hero-bg-image">
   <picture>
+    <source media="(min-width:768px)" type="image/webp" srcset="assets/otimizado/hero-desk-1600.webp 1600w, assets/otimizado/hero-desk-2400.webp 2400w" sizes="110vw">
     <source media="(min-width:768px)" srcset="assets/Asset-Richard-Headerdesk.png">
-    <img class="hero-img" src="assets/Asset-Richard-Header.png" alt="Richard Rasmussen">
+    <source type="image/webp" srcset="assets/otimizado/hero-mobile-1170.webp">
+    <img class="hero-img" src="assets/Asset-Richard-Header.png" alt="Richard Rasmussen" fetchpriority="high">
   </picture>
 </div>
 <div class="hero-text-block">
   <a href="https://www.richardrasmussen.com.br/" class="richard-logo">
-    <img src="assets/Asset-Richard-Logo.png" class="logo-img" alt="Richard Rasmussen">
+    <picture><source type="image/webp" srcset="assets/otimizado/logo-660.webp"><img src="assets/Asset-Richard-Logo.png" class="logo-img" alt="Richard Rasmussen" decoding="async"></picture>
   </a>
   <h1 class="hero-headline">O maior alcance orgânico<br>do nicho de <em>natureza no Brasil.</em></h1>
   <p class="hero-tagline">Biólogo, aventureiro e jornalista.<br>20 anos levando a natureza às telas do país.</p>
   <div class="hero-stats">
-    <div class="hero-stat"><div class="num" data-count="20.1" data-suffix="Mi">20,1Mi</div><div class="lbl">Seguidores totais</div></div>
-    <div class="hero-stat"><div class="num" data-count="47.6" data-suffix="Mi">47,6Mi</div><div class="lbl">Alcance/mês Reels</div></div>
-    <div class="hero-stat"><div class="num" data-count="6.73" data-suffix="Mi">6,73Mi</div><div class="lbl">Inscritos YouTube</div></div>
+    <div class="hero-stat"><div class="num" data-count="20.1" data-suffix="Mi" data-rede="geral.total">20,1Mi</div><div class="lbl">Seguidores totais</div></div>
+    <div class="hero-stat"><div class="num" data-count="47.6" data-suffix="Mi" data-rede="geral.reels_mes">47,6Mi</div><div class="lbl">Alcance/mês Reels</div></div>
+    <div class="hero-stat"><div class="num" data-count="6.73" data-suffix="Mi" data-rede="geral.youtube_inscritos">6,73Mi</div><div class="lbl">Inscritos YouTube</div></div>
   </div>
   <a href="https://wa.me/5511942376098" class="btn-cta" target="_blank">
     <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -893,7 +912,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 <div class="social-header reveal">
   <div class="section-label">Presença digital</div>
   <h2>Números que <em style="font-style:normal;background:linear-gradient(135deg,#F1770B,#F3A50A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">falam por si</em></h2>
-  <div class="social-total"><span class="total-num" data-count="20.1" data-suffix="Mi">~20,1Mi</span><span class="total-lbl">seguidores totais</span></div>
+  <div class="social-total"><span class="total-num" data-count="20.1" data-suffix="Mi" data-rede="geral.total">~20,1Mi</span><span class="total-lbl">seguidores totais</span></div>
 </div>
 
 <!-- Platform tabs -->
@@ -920,8 +939,8 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
       </div>
       <div>
-        <div class="plat-followers">4,0Mi</div>
-        <div class="plat-handle">@richardselvagem · 10.908 posts</div>
+        <div class="plat-followers" data-rede="ig.seguidores">4,0Mi</div>
+        <div class="plat-handle">@richardselvagem · <span data-rede="ig.posts_total">10.908</span> posts</div>
       </div>
     </div>
     <div class="period-toggle">
@@ -932,33 +951,33 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
   <div class="met-grid" id="ig-mets">
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="eye"></i><span class="met-card-lbl">Impressões</span></div>
-      <div class="met-card-val" data-ig-7d="25,9M" data-ig-28d="168,1M">168,1M</div>
+      <div class="met-card-top"><svg class="lucide lucide-eye" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg><span class="met-card-lbl">Impressões</span></div>
+      <div class="met-card-val" data-ig-7d="25,9M" data-ig-28d="168,1M" data-rede="ig.28d.impressoes" data-rede-7d="ig.7d.impressoes">168,1M</div>
       <div class="met-card-sub">últimos 28 dias</div>
     </div>
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="zap"></i><span class="met-card-lbl">Alcance total</span></div>
-      <div class="met-card-val" data-ig-7d="3,0M" data-ig-28d="15,2M">15,2M</div>
+      <div class="met-card-top"><svg class="lucide lucide-zap" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"/></svg><span class="met-card-lbl">Alcance total</span></div>
+      <div class="met-card-val" data-ig-7d="3,0M" data-ig-28d="15,2M" data-rede="ig.28d.alcance" data-rede-7d="ig.7d.alcance">15,2M</div>
       <div class="met-card-sub">pessoas únicas</div>
     </div>
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="heart"></i><span class="met-card-lbl">Curtidas</span></div>
-      <div class="met-card-val" data-ig-7d="779,9k" data-ig-28d="7,9M">7,9M</div>
+      <div class="met-card-top"><svg class="lucide lucide-heart" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg><span class="met-card-lbl">Curtidas</span></div>
+      <div class="met-card-val" data-ig-7d="779,9k" data-ig-28d="7,9M" data-rede="ig.28d.curtidas" data-rede-7d="ig.7d.curtidas">7,9M</div>
       <div class="met-card-sub">posts</div>
     </div>
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="trending-up"></i><span class="met-card-lbl">Engajamento</span></div>
-      <div class="met-card-val" data-ig-7d="1,0M" data-ig-28d="9,0M">9,0M</div>
+      <div class="met-card-top"><svg class="lucide lucide-trending-up" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg><span class="met-card-lbl">Engajamento</span></div>
+      <div class="met-card-val" data-ig-7d="1,0M" data-ig-28d="9,0M" data-rede="ig.28d.engajamento" data-rede-7d="ig.7d.engajamento">9,0M</div>
       <div class="met-card-sub">total</div>
     </div>
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="play-circle"></i><span class="met-card-lbl">Alcance médio</span></div>
-      <div class="met-card-val" data-ig-7d="47,9k" data-ig-28d="107,4k">107,4k</div>
+      <div class="met-card-top"><svg class="lucide lucide-play-circle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z"/><circle cx="12" cy="12" r="10"/></svg><span class="met-card-lbl">Alcance médio</span></div>
+      <div class="met-card-val" data-ig-7d="47,9k" data-ig-28d="107,4k" data-rede="ig.28d.alcance_medio" data-rede-7d="ig.7d.alcance_medio">107,4k</div>
       <div class="met-card-sub">por post</div>
     </div>
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="file-text"></i><span class="met-card-lbl">Posts</span></div>
-      <div class="met-card-val" data-ig-7d="62" data-ig-28d="142">142</div>
+      <div class="met-card-top"><svg class="lucide lucide-file-text" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg><span class="met-card-lbl">Posts</span></div>
+      <div class="met-card-val" data-ig-7d="62" data-ig-28d="142" data-rede="ig.28d.posts" data-rede-7d="ig.7d.posts">142</div>
       <div class="met-card-sub">publicações</div>
     </div>
   </div>
@@ -973,7 +992,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
       </div>
       <div>
-        <div class="plat-followers">2,4Mi</div>
+        <div class="plat-followers" data-rede="tt.seguidores">2,4Mi</div>
         <div class="plat-handle">@richardrasmussenselvagem</div>
       </div>
     </div>
@@ -985,33 +1004,33 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
   <div class="met-grid">
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="eye"></i><span class="met-card-lbl">Impressões</span></div>
-      <div class="met-card-val" data-tt-7d="692,6k" data-tt-28d="3,6M">3,6M</div>
+      <div class="met-card-top"><svg class="lucide lucide-eye" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg><span class="met-card-lbl">Impressões</span></div>
+      <div class="met-card-val" data-tt-7d="692,6k" data-tt-28d="3,6M" data-rede="tt.28d.impressoes" data-rede-7d="tt.7d.impressoes">3,6M</div>
       <div class="met-card-sub">últimos 28 dias</div>
     </div>
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="trending-up"></i><span class="met-card-lbl">Engajamento</span></div>
-      <div class="met-card-val" data-tt-7d="48,6k" data-tt-28d="242,5k">242,5k</div>
+      <div class="met-card-top"><svg class="lucide lucide-trending-up" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg><span class="met-card-lbl">Engajamento</span></div>
+      <div class="met-card-val" data-tt-7d="48,6k" data-tt-28d="242,5k" data-rede="tt.28d.engajamento" data-rede-7d="tt.7d.engajamento">242,5k</div>
       <div class="met-card-sub">total</div>
     </div>
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="heart"></i><span class="met-card-lbl">Curtidas</span></div>
-      <div class="met-card-val" data-tt-7d="47,2k" data-tt-28d="236,7k">236,7k</div>
+      <div class="met-card-top"><svg class="lucide lucide-heart" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg><span class="met-card-lbl">Curtidas</span></div>
+      <div class="met-card-val" data-tt-7d="47,2k" data-tt-28d="236,7k" data-rede="tt.28d.curtidas" data-rede-7d="tt.7d.curtidas">236,7k</div>
       <div class="met-card-sub">total</div>
     </div>
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="bar-chart-2"></i><span class="met-card-lbl">Engaj. médio</span></div>
-      <div class="met-card-val" data-tt-7d="4.053" data-tt-28d="5.159">5.159</div>
+      <div class="met-card-top"><svg class="lucide lucide-bar-chart-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21v-6"/><path d="M12 21V3"/><path d="M19 21V9"/></svg><span class="met-card-lbl">Engaj. médio</span></div>
+      <div class="met-card-val" data-tt-7d="4.053" data-tt-28d="5.159" data-rede="tt.28d.engaj_medio" data-rede-7d="tt.7d.engaj_medio">5.159</div>
       <div class="met-card-sub">por post</div>
     </div>
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="file-text"></i><span class="met-card-lbl">Posts</span></div>
-      <div class="met-card-val" data-tt-7d="12" data-tt-28d="47">47</div>
+      <div class="met-card-top"><svg class="lucide lucide-file-text" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg><span class="met-card-lbl">Posts</span></div>
+      <div class="met-card-val" data-tt-7d="12" data-tt-28d="47" data-rede="tt.28d.posts" data-rede-7d="tt.7d.posts">47</div>
       <div class="met-card-sub">publicações</div>
     </div>
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="thumbs-up"></i><span class="met-card-lbl">Total gostos</span></div>
-      <div class="met-card-val">18,6Mi</div>
+      <div class="met-card-top"><svg class="lucide lucide-thumbs-up" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/><path d="M7 10v12"/></svg><span class="met-card-lbl">Total gostos</span></div>
+      <div class="met-card-val" data-rede="tt.gostos_total">18,6Mi</div>
       <div class="met-card-sub">acumulados</div>
     </div>
   </div>
@@ -1026,8 +1045,8 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
       </div>
       <div>
-        <div class="plat-followers">6,78Mi</div>
-        <div class="plat-handle">@RichardRasmussenSelvagem · 2.200+ vídeos</div>
+        <div class="plat-followers" data-rede="yt.inscritos">6,78Mi</div>
+        <div class="plat-handle">@RichardRasmussenSelvagem · <span data-rede="yt.videos_handle">2.200+</span> vídeos</div>
       </div>
     </div>
     <div class="period-toggle">
@@ -1038,33 +1057,33 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
   <div class="met-grid">
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="eye"></i><span class="met-card-lbl">Views</span></div>
-      <div class="met-card-val" data-yt-7d="2,4M" data-yt-28d="34,3M">34,3M</div>
+      <div class="met-card-top"><svg class="lucide lucide-eye" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg><span class="met-card-lbl">Views</span></div>
+      <div class="met-card-val" data-yt-7d="2,4M" data-yt-28d="34,3M" data-rede="yt.28d.views" data-rede-7d="yt.7d.views">34,3M</div>
       <div class="met-card-sub">últimos 28 dias</div>
     </div>
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="trending-up"></i><span class="met-card-lbl">Engajamento</span></div>
-      <div class="met-card-val" data-yt-7d="90,3k" data-yt-28d="1,57M">1,57M</div>
+      <div class="met-card-top"><svg class="lucide lucide-trending-up" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg><span class="met-card-lbl">Engajamento</span></div>
+      <div class="met-card-val" data-yt-7d="90,3k" data-yt-28d="1,57M" data-rede="yt.28d.engajamento" data-rede-7d="yt.7d.engajamento">1,57M</div>
       <div class="met-card-sub">total</div>
     </div>
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="heart"></i><span class="met-card-lbl">Curtidas</span></div>
-      <div class="met-card-val" data-yt-7d="88,5k" data-yt-28d="1,54M">1,54M</div>
+      <div class="met-card-top"><svg class="lucide lucide-heart" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg><span class="met-card-lbl">Curtidas</span></div>
+      <div class="met-card-val" data-yt-7d="88,5k" data-yt-28d="1,54M" data-rede="yt.28d.curtidas" data-rede-7d="yt.7d.curtidas">1,54M</div>
       <div class="met-card-sub">total</div>
     </div>
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="bar-chart-2"></i><span class="met-card-lbl">Média views</span></div>
-      <div class="met-card-val" data-yt-7d="40,7k" data-yt-28d="135,7k">135,7k</div>
+      <div class="met-card-top"><svg class="lucide lucide-bar-chart-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21v-6"/><path d="M12 21V3"/><path d="M19 21V9"/></svg><span class="met-card-lbl">Média views</span></div>
+      <div class="met-card-val" data-yt-7d="40,7k" data-yt-28d="135,7k" data-rede="yt.28d.media_views" data-rede-7d="yt.7d.media_views">135,7k</div>
       <div class="met-card-sub">por vídeo</div>
     </div>
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="file-text"></i><span class="met-card-lbl">Vídeos</span></div>
-      <div class="met-card-val" data-yt-7d="58" data-yt-28d="253">253</div>
+      <div class="met-card-top"><svg class="lucide lucide-file-text" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg><span class="met-card-lbl">Vídeos</span></div>
+      <div class="met-card-val" data-yt-7d="58" data-yt-28d="253" data-rede="yt.28d.videos" data-rede-7d="yt.7d.videos">253</div>
       <div class="met-card-sub">publicados</div>
     </div>
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="users"></i><span class="met-card-lbl">Total vídeos</span></div>
-      <div class="met-card-val">2.217</div>
+      <div class="met-card-top"><svg class="lucide lucide-users" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg><span class="met-card-lbl">Total vídeos</span></div>
+      <div class="met-card-val" data-rede="yt.total_videos">2.217</div>
       <div class="met-card-sub">no canal principal</div>
     </div>
   </div>
@@ -1079,25 +1098,25 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
       </div>
       <div>
-        <div class="plat-followers">7Mi</div>
+        <div class="plat-followers" data-rede="fb.seguidores">7Mi</div>
         <div class="plat-handle">Maior base no nicho natureza no Brasil</div>
       </div>
     </div>
   </div>
   <div class="met-grid">
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="users"></i><span class="met-card-lbl">Seguidores</span></div>
-      <div class="met-card-val">7Mi</div>
+      <div class="met-card-top"><svg class="lucide lucide-users" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg><span class="met-card-lbl">Seguidores</span></div>
+      <div class="met-card-val" data-rede="fb.seguidores">7Mi</div>
       <div class="met-card-sub">comunidade ativa</div>
     </div>
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="eye"></i><span class="met-card-lbl">Impressões</span></div>
-      <div class="met-card-val">206Mi</div>
+      <div class="met-card-top"><svg class="lucide lucide-eye" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg><span class="met-card-lbl">Impressões</span></div>
+      <div class="met-card-val" data-rede="fb.impressoes_28d">206Mi</div>
       <div class="met-card-sub">últimos 28 dias</div>
     </div>
     <div class="met-card">
-      <div class="met-card-top"><i data-lucide="heart"></i><span class="met-card-lbl">Curtidas</span></div>
-      <div class="met-card-val">9,7M</div>
+      <div class="met-card-top"><svg class="lucide lucide-heart" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg><span class="met-card-lbl">Curtidas</span></div>
+      <div class="met-card-val" data-rede="fb.curtidas_28d">9,7M</div>
       <div class="met-card-sub">últimos 28 dias</div>
     </div>
   </div>
@@ -1109,7 +1128,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 <section id="bio" class="section-parallax">
 <div class="bio-grid">
   <div class="bio-photo-wrap reveal">
-    <img src="assets/Asset-Richard-Quem-é.png" loading="lazy" decoding="async" style="width:100%;height:auto;object-fit:contain;display:block" alt="Richard Rasmussen">
+    <picture><source type="image/webp" srcset="assets/otimizado/quem-e-1080.webp"><img src="assets/Asset-Richard-Quem-é.png" loading="lazy" decoding="async" style="width:100%;height:auto;object-fit:contain;display:block" alt="Richard Rasmussen"></picture>
   </div>
   <div class="bio-content reveal reveal-delay-2">
     <div class="section-label">Quem é</div>
@@ -1148,7 +1167,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   <div class="map-inner">
     <div class="map-img-wrap">
       <div class="map-tooltip" id="mapTooltip"></div>
-      <img src="assets/Asset-Richard-Distribuição-geográfica.png" loading="lazy" decoding="async" class="brazil-map-img" alt="Distribuição geográfica Brasil">
+      <picture><source type="image/webp" srcset="assets/otimizado/mapa-1080.webp"><img src="assets/Asset-Richard-Distribuição-geográfica.png" loading="lazy" decoding="async" class="brazil-map-img" alt="Distribuição geográfica Brasil"></picture>
       <!-- Hotspots — transparentes sobre o asset -->
       <div class="map-hotspot" style="top:22%;left:30%" data-region="Norte" data-pct="10%"></div>
       <div class="map-hotspot" style="top:28%;left:68%" data-region="Nordeste" data-pct="15%"></div>
@@ -1297,7 +1316,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     <div style="padding:24px">
       <div class="demo-title">Performance YouTube</div>
       <div class="perf-grid">
-        <div class="perf-card"><div class="perf-val">6,78Mi</div><div class="perf-lbl">Inscritos totais</div></div>
+        <div class="perf-card"><div class="perf-val" data-rede="yt.inscritos">6,78Mi</div><div class="perf-lbl">Inscritos totais</div></div>
         <div class="perf-card"><div class="perf-val">34,3Mi</div><div class="perf-lbl">Views · 28d</div></div>
         <div class="perf-card"><div class="perf-val">1,57Mi</div><div class="perf-lbl">Engajamento · 28d</div></div>
         <div class="perf-card"><div class="perf-val">135,7k</div><div class="perf-lbl">Média views/vídeo</div></div>
@@ -1325,7 +1344,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     </div>
   </div>
   <div class="section-image-block reveal reveal-delay-2">
-    <img src="assets/Asset-Richard-Recebe.png" loading="lazy" decoding="async" onerror="this.style.display='none'" alt="Richard Recebe">
+    <picture><source type="image/webp" srcset="assets/otimizado/recebe-1080.webp"><img src="assets/Asset-Richard-Recebe.png" loading="lazy" decoding="async" onerror="this.style.display='none'" alt="Richard Recebe"></picture>
   </div>
 </div>
 
@@ -1386,8 +1405,8 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     <p class="amazon-desc">Co-liderada com Renato Cariani, reuniu os maiores nomes do cenário fitness e entretenimento digital em uma operação inédita de alcance e impacto real.</p>
     <div class="roi-grid">
       <div class="roi-item roi-interactive" data-drawer="alcance">
-        <div class="roi-n roi-count" data-target="47.6" data-suffix="Mi">0</div>
-        <div class="roi-l">Alcance mensal <i data-lucide="bar-chart-2" style="width:12px;height:12px;vertical-align:middle;margin-left:4px;opacity:.5"></i></div>
+        <div class="roi-n roi-count" data-target="47.6" data-suffix="Mi" data-rede="geral.reels_mes">0</div>
+        <div class="roi-l">Alcance mensal <svg class="lucide lucide-bar-chart-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:12px;height:12px;vertical-align:middle;margin-left:4px;opacity:.5"><path d="M5 21v-6"/><path d="M12 21V3"/><path d="M19 21V9"/></svg></div>
       </div>
       <div class="roi-item roi-interactive">
         <div class="roi-n roi-count" data-target="1500" data-suffix=" km" data-integer="true">0</div>
@@ -1398,14 +1417,14 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
         <div class="roi-l">Influenciadores parceiros</div>
       </div>
       <div class="roi-item roi-interactive">
-        <div class="roi-n roi-count" data-target="20.1" data-suffix="Mi">0</div>
+        <div class="roi-n roi-count" data-target="20.1" data-suffix="Mi" data-rede="geral.total">0</div>
         <div class="roi-l">Seguidores combinados</div>
       </div>
     </div>
   </div>
   </div><!-- end text-wrap -->
   <div class="section-image-block reveal reveal-delay-2">
-    <img src="assets/Asset-Richard-Transamazônica2026.png" loading="lazy" decoding="async" onerror="this.style.display='none'" alt="Transamazônica">
+    <picture><source type="image/webp" srcset="assets/otimizado/transamazonica-1080.webp"><img src="assets/Asset-Richard-Transamazônica2026.png" loading="lazy" decoding="async" onerror="this.style.display='none'" alt="Transamazônica"></picture>
   </div>
 </div>
 
@@ -1448,9 +1467,9 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   <div class="drawer-panel">
     <div class="drawer-head">
       <div class="drawer-title">Decomposição do Alcance</div>
-      <button class="drawer-close" onclick="closeDrawer()"><i data-lucide="x"></i></button>
+      <button class="drawer-close" onclick="closeDrawer()"><svg class="lucide lucide-x" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
     </div>
-    <div class="drawer-sub">47,6 milhões de pessoas/mês · dados orgânicos</div>
+    <div class="drawer-sub"><span data-rede="geral.reels_mes" data-rede-extenso>47,6 milhões</span> de pessoas/mês · dados orgânicos</div>
     <div class="drawer-bars">
       <div class="drawer-bar-row">
         <div class="drawer-bar-lbl">YouTube</div>
@@ -1476,31 +1495,31 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 </div>
 <div class="exp-grid">
   <div class="exp-card reveal reveal-delay-1">
-    <div class="exp-image"><img loading="lazy" decoding="async" src="assets/01. Pais e Filhos - Banner.webp" alt="Festa Pais e Filhos" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-image"><img loading="lazy" decoding="async" src="assets/otimizado/exp-01-1200.webp" alt="Festa Pais e Filhos" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
     <div class="exp-info"><div class="exp-title">Festa Pais e Filhos</div><div class="exp-desc">Traga sua família para passar um dia de fã com Richard Rasmussen!</div><a href="https://www.richardrasmussen.com.br/eventos/festa-pais-e-filhos" target="_blank" class="btn-comprar">Comprar</a></div>
   </div>
   <div class="exp-card reveal reveal-delay-2">
-    <div class="exp-image"><img loading="lazy" decoding="async" src="assets/04. Expedição Amazônia - Desktop.webp" alt="Expedição Amazônia" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-image"><img loading="lazy" decoding="async" src="assets/otimizado/exp-04-1200.webp" alt="Expedição Amazônia" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
     <div class="exp-info"><div class="exp-title">Expedição Amazônia</div><div class="exp-desc">Uma Jornada Inesquecível de 3 dias pela Amazônia com Richard Rasmussen.</div><a href="https://www.richardrasmussen.com.br/eventos/expedicao-amazonia" target="_blank" class="btn-comprar">Comprar</a></div>
   </div>
   <div class="exp-card reveal reveal-delay-3">
-    <div class="exp-image"><img loading="lazy" decoding="async" src="assets/03. Expedição Pantanal Norte - Desktop.webp" alt="Pantanal Norte" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-image"><img loading="lazy" decoding="async" src="assets/otimizado/exp-03-1200.webp" alt="Pantanal Norte" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
     <div class="exp-info"><div class="exp-title">Expedição Pantanal Norte</div><div class="exp-desc">Viva o Pantanal Norte de forma verdadeira, ao lado de quem conhece cada detalhe.</div><a href="https://www.richardrasmussen.com.br/eventos/expedicao-pantanal-norte" target="_blank" class="btn-comprar">Comprar</a></div>
   </div>
   <div class="exp-card reveal reveal-delay-1">
-    <div class="exp-image"><img loading="lazy" decoding="async" src="assets/02. Expedição Africa - Banner 2 - Desktop.webp" alt="Expedição África" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-image"><img loading="lazy" decoding="async" src="assets/otimizado/exp-02-1200.webp" alt="Expedição África" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
     <div class="exp-info"><div class="exp-title">Expedição África</div><div class="exp-desc">Uma jornada selvagem inesquecível pela África do Sul com Richard Rasmussen!</div><a href="https://www.richardrasmussen.com.br/eventos/expedicao-africa" target="_blank" class="btn-comprar">Comprar</a></div>
   </div>
   <div class="exp-card reveal reveal-delay-2">
-    <div class="exp-image"><img loading="lazy" decoding="async" src="assets/05. EXPEDIÇÃO AMAZÔNIA Edição Exclusiva para Estudantes - Desktop.webp" alt="Expedição Amazônia com Rodrigo Hidalgo" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-image"><img loading="lazy" decoding="async" src="assets/otimizado/exp-05-1200.webp" alt="Expedição Amazônia com Rodrigo Hidalgo" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
     <div class="exp-info"><div class="exp-title">Expedição Amazônia com Rodrigo Hidalgo</div><div class="exp-desc">Edição exclusiva para estudantes. Uma jornada feita para quem quer conhecimento real.</div><a href="https://www.richardrasmussen.com.br/eventos/expedicao-amazonia-com-rodrigo-hidalgo" target="_blank" class="btn-comprar">Comprar</a></div>
   </div>
   <div class="exp-card reveal reveal-delay-3">
-    <div class="exp-image"><img loading="lazy" decoding="async" src="assets/06. Palestras - Desktop 1.png" alt="Palestras" class="no-zoom" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-image"><picture><source type="image/webp" srcset="assets/otimizado/exp-06-1200.webp"><img loading="lazy" decoding="async" src="assets/06. Palestras - Desktop 1.png" alt="Palestras" class="no-zoom" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></picture></div>
     <div class="exp-info"><div class="exp-title">Palestras</div><div class="exp-desc">Para agro, turismo, corporativo, pet e conservação — adaptadas ao seu evento.</div><a href="https://www.richardrasmussen.com.br/eventos/palestras" target="_blank" class="btn-comprar">Comprar</a></div>
   </div>
   <div class="exp-card reveal reveal-delay-1">
-    <div class="exp-image"><img loading="lazy" decoding="async" src="assets/07. Pantanal Sul - ROTEIRO 1 — BICHOS E GENTE - Desktop.webp" alt="Pantanal Sul" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
+    <div class="exp-image"><img loading="lazy" decoding="async" src="assets/otimizado/exp-07-1200.webp" alt="Pantanal Sul" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)"></div>
     <div class="exp-info"><div class="exp-title">Expedição Pantanal Sul: Bichos e Gente</div><div class="exp-desc">Uma aventura exclusiva de 4 dias e 3 noites no coração do Pantanal.</div><a href="https://www.richardrasmussen.com.br/eventos/expedicao-pantanal-sul-bichos-e-gente" target="_blank" class="btn-comprar">Comprar</a></div>
   </div>
 </div>
@@ -1511,7 +1530,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 <section id="cta">
   <div class="cta-eyebrow reveal">Parcerias Estratégicas · São Paulo, SP</div>
   <h2 class="cta-h reveal reveal-delay-1">Sua marca na maior<br>vitrine orgânica de natureza do <em>Brasil.</em></h2>
-  <p class="cta-sub reveal reveal-delay-2">20,1 milhões de seguidores. Audiência qualificada. Conteúdo que engaja de verdade.</p>
+  <p class="cta-sub reveal reveal-delay-2"><span data-rede="geral.total" data-rede-extenso>20,1 milhões</span> de seguidores. Audiência qualificada. Conteúdo que engaja de verdade.</p>
   <div class="reveal reveal-delay-3">
     <a href="https://wa.me/5511942376098" class="btn-cta-lg" target="_blank">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -1557,8 +1576,6 @@ document.querySelectorAll('.plat-tab').forEach(tab => {
     tab.classList.add('active');
     const panel = document.getElementById('panel-' + tab.dataset.plat);
     if (panel) panel.classList.add('active');
-    // Re-init Lucide icons for newly visible panel
-    if (window.lucide) lucide.createIcons();
   });
 });
 
@@ -1705,19 +1722,20 @@ const roiObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (!e.isIntersecting) return;
     e.target.querySelectorAll('.roi-count').forEach(el => {
-      const target = parseFloat(el.dataset.target);
-      const suffix = el.dataset.suffix || '';
       const isInt = el.dataset.integer === 'true';
       const duration = 1600;
       const start = performance.now();
       function step(now) {
+        // relido a cada quadro: os números do painel podem chegar no meio da animação
+        const target = parseFloat(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
         const p = Math.min((now - start) / duration, 1);
         const ease = 1 - Math.pow(1 - p, 3);
         const val = target * ease;
         const display = isInt ? Math.floor(val).toLocaleString('pt-BR') : val.toFixed(1).replace('.', ',');
         el.textContent = display + suffix;
         if (p < 1) requestAnimationFrame(step);
-        else el.textContent = (isInt ? Math.floor(target).toLocaleString('pt-BR') : target.toFixed(1).replace('.', ',')) + suffix;
+        else { el.textContent = el.dataset.countFinal || ((isInt ? Math.floor(target).toLocaleString('pt-BR') : target.toFixed(1).replace('.', ',')) + suffix); el.dataset.contado = '1'; }
       }
       requestAnimationFrame(step);
       roiObs.unobserve(e.target);
@@ -1738,7 +1756,6 @@ function openDrawer(id) {
       bar.style.width = bar.dataset.w + '%';
     });
   }, 400);
-  if (window.lucide) lucide.createIcons();
 }
 function closeDrawer() {
   document.querySelectorAll('.drawer-overlay.open').forEach(d => d.classList.remove('open'));
@@ -1750,28 +1767,23 @@ document.querySelectorAll('.drawer-overlay').forEach(overlay => {
   overlay.addEventListener('click', (e) => { if (e.target === overlay) closeDrawer(); });
 });
 
-// ─── LUCIDE INIT ───
-document.addEventListener('DOMContentLoaded', () => {
-  if (window.lucide) lucide.createIcons();
-});
-if (document.readyState !== 'loading' && window.lucide) lucide.createIcons();
-
 // ─── COUNT-UP (scroll-triggered, single system) ───
 function animateCount(el) {
-  const target = parseFloat(el.dataset.count);
-  const suffix = el.dataset.suffix || '';
   const duration = 1600;
-  const isDecimal = String(el.dataset.count).includes('.');
-  const decimals = isDecimal ? (String(el.dataset.count).split('.')[1] || '').length : 0;
   const start = performance.now();
   function step(now) {
+    // relido a cada quadro: os números do painel podem chegar no meio da animação
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const isDecimal = String(el.dataset.count).includes('.');
+    const decimals = isDecimal ? (String(el.dataset.count).split('.')[1] || '').length : 0;
     const progress = Math.min((now - start) / duration, 1);
     const ease = 1 - Math.pow(1 - progress, 3);
     const val = target * ease;
     const display = isDecimal ? val.toFixed(decimals).replace('.', ',') : Math.floor(val);
     el.textContent = display + suffix;
     if (progress < 1) requestAnimationFrame(step);
-    else el.textContent = (isDecimal ? target.toFixed(decimals).replace('.', ',') : target) + suffix;
+    else el.textContent = el.dataset.countFinal || ((isDecimal ? target.toFixed(decimals).replace('.', ',') : target) + suffix);
   }
   requestAnimationFrame(step);
 }
@@ -1814,13 +1826,85 @@ document.querySelectorAll('.net-tab').forEach(tab => {
   });
 });
 
-if (window.lucide) lucide.createIcons();
+</script>
+
+<script>
+// ─── NÚMEROS DAS REDES (Richard 2.0, painel Marketing → "Números das redes") ───
+// Contrato: GET /api/site/redes → { atualizadoEm, valores: { "<chave>": "<texto>" } }.
+// Sem resposta, erro, chave ausente ou vazia: o texto fixo do HTML continua valendo.
+(function () {
+  var API = 'https://www.richardrasmussen.com.br/api/site/redes';
+  try { // só para teste local: ?redes_api=http://localhost:PORTA/api/site/redes
+    var q = new URLSearchParams(location.search).get('redes_api');
+    if (q && /^(localhost|127\.0\.0\.1)$/.test(location.hostname)) API = q;
+  } catch (e) {}
+  if (!window.fetch) return;
+  var VALIDO = /^[~+]?\s?\d[\d.,\s]*(k|K|M|Mi|mi|B)?\+?$/;
+  var UNIDADE = { k: 'mil', K: 'mil', M: 'milhões', Mi: 'milhões', mi: 'milhões', B: 'bilhões' };
+  function valor(v, k) {
+    var s = k && v[k];
+    if (typeof s !== 'string') return null;
+    s = s.trim();
+    return s && s.length <= 12 && VALIDO.test(s) ? s : null;
+  }
+  function extenso(s) { // "21,3Mi" -> "21,3 milhões"
+    var m = s.match(/^[~+]?\s?([\d.,]+)\s?(k|K|M|Mi|mi|B)\+?$/);
+    return m ? m[1] + ' ' + UNIDADE[m[2]] : null;
+  }
+  function numero(s) { // "21,3Mi" -> { count: "21.3", suffix: "Mi" }; "11.004" -> "11004"; "6.73Mi" -> "6.73"
+    var m = s.match(/^[~+]?\s?([\d.,]+)\s?([A-Za-z]*)(\+?)$/);
+    if (!m) return null;
+    var d = m[1], n;
+    if (d.indexOf(',') >= 0) n = d.replace(/\./g, '').replace(',', '.');           // vírgula = decimal (pt-BR)
+    else if (m[2] && (d.match(/\./g) || []).length === 1) n = d;                  // com sufixo e um ponto só: ponto decimal
+    else n = d.replace(/\./g, '');                                                // ponto = milhar
+    return isNaN(parseFloat(n)) ? null : { count: n, suffix: m[2] + m[3] };
+  }
+  function aplicar(v) {
+    document.querySelectorAll('[data-rede]').forEach(function (el) {
+      var k = el.getAttribute('data-rede'), k7 = el.getAttribute('data-rede-7d');
+      if (k7) { // card com botões 7/28 dias
+        var plat = k7.split('.')[0], v7 = valor(v, k7), v28 = valor(v, k);
+        if (v7) el.setAttribute('data-' + plat + '-7d', v7);
+        if (v28) el.setAttribute('data-' + plat + '-28d', v28);
+        var painel = el.closest('.plat-panel');
+        var ativo = painel && painel.querySelector('.period-btn.active');
+        var atual = ativo && ativo.getAttribute('data-period') === '7d' ? v7 : v28;
+        if (atual) el.textContent = atual;
+        return;
+      }
+      var s = valor(v, k);
+      if (!s) return;
+      if (el.hasAttribute('data-rede-extenso')) { var e = extenso(s); if (e) el.textContent = e; return; }
+      if (el.hasAttribute('data-count')) {
+        var n = numero(s);
+        if (!n) return;
+        el.dataset.count = n.count; el.dataset.suffix = n.suffix; el.dataset.countFinal = s;
+      }
+      if (el.hasAttribute('data-target')) { // contadores da Transamazônica: mostram "0" até animar
+        var t = numero(s);
+        if (!t) return;
+        el.dataset.target = t.count; el.dataset.suffix = t.suffix; el.dataset.countFinal = s;
+        if (el.dataset.contado) el.textContent = s;
+        return;
+      }
+      el.textContent = s;
+    });
+  }
+  var ctl = window.AbortController ? new AbortController() : null;
+  var timer = setTimeout(function () { if (ctl) ctl.abort(); }, 3000);
+  fetch(API, { signal: ctl ? ctl.signal : undefined, credentials: 'omit', headers: { Accept: 'application/json' } })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (j) { if (j && j.valores && typeof j.valores === 'object') aplicar(j.valores); })
+    .catch(function () {})
+    .then(function () { clearTimeout(timer); });
+})();
 </script>
 
 <!-- BOTTOM NAV -->
 <nav class="top-nav" id="topNav">
   <a href="https://www.richardrasmussen.com.br/" class="top-nav-logo">
-    <img src="assets/Asset-Richard-Logo.png" alt="Richard Rasmussen">
+    <picture><source type="image/webp" srcset="assets/otimizado/logo-660.webp"><img src="assets/Asset-Richard-Logo.png" alt="Richard Rasmussen" decoding="async"></picture>
   </a>
   <div class="top-nav-links">
     <a href="#bio" class="top-nav-link">Sobre</a>
@@ -1861,18 +1945,18 @@ if (window.lucide) lucide.createIcons();
 
 <!-- FLOATING LEAVES — mouse repel parallax -->
 <div id="leaves-layer" aria-hidden="true">
-  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax5.png" style="top:3%;right:-7vw;width:clamp(260px,28vw,400px);transform:rotate(18deg)" data-depth="0.22">
-  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax2.png" style="top:11%;left:-7vw;width:clamp(250px,26vw,384px);transform:rotate(-22deg)" data-depth="0.18">
-  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax3.png" style="top:19%;right:-7vw;width:clamp(264px,28vw,404px);transform:rotate(30deg) scaleX(-1)" data-depth="0.24">
-  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax4.png" style="top:27%;left:-7vw;width:clamp(256px,28vw,396px);transform:rotate(-15deg)" data-depth="0.20">
-  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax6.png" style="top:36%;right:-7vw;width:clamp(260px,28vw,400px);transform:rotate(24deg)" data-depth="0.22">
-  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax5.png" style="top:45%;left:-7vw;width:clamp(270px,30vw,416px);transform:rotate(-28deg) scaleX(-1)" data-depth="0.19">
-  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax2.png" style="top:54%;right:-7vw;width:clamp(256px,28vw,390px);transform:rotate(16deg)" data-depth="0.23">
-  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax3.png" style="top:63%;left:-7vw;width:clamp(260px,28vw,400px);transform:rotate(-20deg)" data-depth="0.20">
-  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax4.png" style="top:72%;right:-7vw;width:clamp(264px,28vw,404px);transform:rotate(32deg) scaleX(-1)" data-depth="0.24">
-  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax6.png" style="top:81%;left:-7vw;width:clamp(256px,28vw,392px);transform:rotate(-12deg)" data-depth="0.18">
-  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax5.png" style="top:90%;right:-7vw;width:clamp(270px,30vw,416px);transform:rotate(22deg)" data-depth="0.21">
-  <img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax2.png" style="top:97%;left:-7vw;width:clamp(260px,28vw,400px);transform:rotate(-26deg) scaleX(-1)" data-depth="0.19">
+  <picture><source type="image/webp" srcset="assets/otimizado/folha-5-800.webp"><img class="leaf" decoding="async" src="assets/Asset-Richard-FoilParalax5.png" style="top:3%;right:-7vw;width:clamp(260px,28vw,400px);transform:rotate(18deg)" data-depth="0.22"></picture>
+  <picture><source type="image/webp" srcset="assets/otimizado/folha-2-800.webp"><img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax2.png" style="top:11%;left:-7vw;width:clamp(250px,26vw,384px);transform:rotate(-22deg)" data-depth="0.18"></picture>
+  <picture><source type="image/webp" srcset="assets/otimizado/folha-3-800.webp"><img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax3.png" style="top:19%;right:-7vw;width:clamp(264px,28vw,404px);transform:rotate(30deg) scaleX(-1)" data-depth="0.24"></picture>
+  <picture><source type="image/webp" srcset="assets/otimizado/folha-4-800.webp"><img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax4.png" style="top:27%;left:-7vw;width:clamp(256px,28vw,396px);transform:rotate(-15deg)" data-depth="0.20"></picture>
+  <picture><source type="image/webp" srcset="assets/otimizado/folha-6-800.webp"><img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax6.png" style="top:36%;right:-7vw;width:clamp(260px,28vw,400px);transform:rotate(24deg)" data-depth="0.22"></picture>
+  <picture><source type="image/webp" srcset="assets/otimizado/folha-5-800.webp"><img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax5.png" style="top:45%;left:-7vw;width:clamp(270px,30vw,416px);transform:rotate(-28deg) scaleX(-1)" data-depth="0.19"></picture>
+  <picture><source type="image/webp" srcset="assets/otimizado/folha-2-800.webp"><img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax2.png" style="top:54%;right:-7vw;width:clamp(256px,28vw,390px);transform:rotate(16deg)" data-depth="0.23"></picture>
+  <picture><source type="image/webp" srcset="assets/otimizado/folha-3-800.webp"><img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax3.png" style="top:63%;left:-7vw;width:clamp(260px,28vw,400px);transform:rotate(-20deg)" data-depth="0.20"></picture>
+  <picture><source type="image/webp" srcset="assets/otimizado/folha-4-800.webp"><img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax4.png" style="top:72%;right:-7vw;width:clamp(264px,28vw,404px);transform:rotate(32deg) scaleX(-1)" data-depth="0.24"></picture>
+  <picture><source type="image/webp" srcset="assets/otimizado/folha-6-800.webp"><img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax6.png" style="top:81%;left:-7vw;width:clamp(256px,28vw,392px);transform:rotate(-12deg)" data-depth="0.18"></picture>
+  <picture><source type="image/webp" srcset="assets/otimizado/folha-5-800.webp"><img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax5.png" style="top:90%;right:-7vw;width:clamp(270px,30vw,416px);transform:rotate(22deg)" data-depth="0.21"></picture>
+  <picture><source type="image/webp" srcset="assets/otimizado/folha-2-800.webp"><img class="leaf" loading="lazy" decoding="async" src="assets/Asset-Richard-FoilParalax2.png" style="top:97%;left:-7vw;width:clamp(260px,28vw,400px);transform:rotate(-26deg) scaleX(-1)" data-depth="0.19"></picture>
 </div>
 
 <style>
@@ -1881,7 +1965,7 @@ if (window.lucide) lucide.createIcons();
   position:fixed;
   inset:0;
   z-index:-1;
-  background-image:url('assets/asset-fundo.png');
+  background-image:url('assets/otimizado/fundo-1600.webp');
   background-size:cover;
   background-position:center 0%;
   opacity:.45;
@@ -1906,6 +1990,7 @@ body{position:relative}
   pointer-events:none;
   filter:drop-shadow(0 8px 28px rgba(0,0,0,.4));
 }
+@media(max-width:767px){#page-bg{background-image:url('assets/otimizado/fundo-800.webp')}}
 @media(max-width:600px){.leaf{opacity:.9;width:clamp(60px,14vw,100px)!important;right:-14vw!important;left:-14vw!important}}
 </style>
 
